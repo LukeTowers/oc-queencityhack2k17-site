@@ -52,6 +52,12 @@ tabs:
             type: textarea
             tab: Overview
 
+        photos:
+            label: Photos
+            type: fileupload
+            mode: image
+            tab: Overview
+
         _is_fixed:
             label: Spayed/Neutered
             span: full
@@ -251,9 +257,3 @@ tabs:
             type: partial
             path: $/teamate/ccrezqs/models/note/field.relation.htm
             tab: Notes
-
-        photos:
-            label: Photos
-            type: fileupload
-            mode: image
-            tab: Photos

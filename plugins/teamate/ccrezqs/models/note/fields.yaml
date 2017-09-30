@@ -1,19 +1,15 @@
 fields:
     title:
         label: Title
-        oc.commentPosition: ''
-        span: full
+        span: left
         type: text
-    contents:
-        label: Contents
-        size: ''
-        oc.commentPosition: ''
-        span: full
-        type: textarea
     created_at@update:
         label: 'Created At'
-        oc.commentPosition: ''
         mode: date
-        span: full
+        span: right
         disabled: 1
         type: datepicker
+    contents:
+        label: Contents
+        span: full
+        type: textarea

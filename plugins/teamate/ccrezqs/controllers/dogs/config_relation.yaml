@@ -1,5 +1,5 @@
 notes:
-    label: Notes
+    label: Note
     view:
         list: $/teamate/ccrezqs/models/note/columns.yaml
         toolbarButtons: create|delete
