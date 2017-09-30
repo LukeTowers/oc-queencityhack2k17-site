@@ -1,0 +1,419 @@
+title = "form"
+url = "/form"
+layout = "default"
+is_hidden = "0"
+==
+<!-- Page Content -->
+    <div class="container">
+    <div class="well">
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Foster
+                    <small>Application</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Foster Application</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Foster Form -->
+        <div class="row">
+            <div class="col-md-8">
+                <h3>Foster Information</h3>
+
+                <form data-request="onTest" data-request-update="thankyou: '#success'" data-request-confirm="Are You Sure!">
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>First Name:</label>
+                            <input type="text" class="form-control" name="firstname" id="firstname" required data-validation-required-message="Please enter your first name.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Last Name:</label>
+                            <input type="text" class="form-control" name="lastname" id="lastname" required data-validation-required-message="Please enter your last name.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Are you over the age of 18?</label>
+                            <div class="radio radio-primary">
+                                <label>
+                                    <input type="radio" value="yes" name="over_age" id="over_age_yes" class="form-control" required data-validation-required-message="Please select age option."><span class="circle"></span><span class="check"></span>
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="radio radio-primary">
+                                <label>
+                                    <input type="radio" value="no" name="over_age" id="over_age_no" class="form-control" required data-validation-required-message="Please select age option."><span class="circle"></span><span class="check"></span>
+                                    No
+                                </label>
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Phone Number:</label>
+                            <input type="tel" class="form-control" name="phone" id="phone" required data-validation-required-message="Please enter your phone number.">
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Email Address:</label>
+                            <input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Please enter your email address.">
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Street Address:</label>
+                            <input type="text" class="form-control" name="street_address" id="street_address" required data-validation-required-message="Please enter your street address.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Street Address:</label>
+                            <input type="text" class="form-control" name="street" id="street" required data-validation-required-message="Please enter your street address.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>City:</label>
+                            <input type="text" class="form-control" name="city" id="city" required data-validation-required-message="Please enter your city.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Province:</label>
+                            <select class="form-control" id="province" required data-validation-required-message="Please select your province.">
+                              <option value="AB">AB</option>
+                              <option value="BC">BC</option>
+                              <option value="MB">MB</option>
+                              <option value="NB">NB</option>
+                              <option value="NL">NL</option>
+                              <option value="NS">NS</option>
+                              <option value="NT">NT</option>
+                              <option value="NU">NU</option>
+                              <option value="ON">ON</option>
+                              <option value="PE">PE</option>
+                              <option value="QC">QC</option>
+                              <option value="SK" selected="selected">SK</option>
+                              <option value="YT">YT</option>
+                            </select>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Postal Code:</label>
+                            <input type="text" class="form-control" name="postal" id="postal" required data-validation-required-message="Please enter your postal code.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Type of Residence:</label>
+                            <select class="form-control" id="type_residence" required data-validation-required-message="Please select your type of residence.">
+                              <option value="House" selected="selected">House</option>
+                              <option value="Apartment">Apartment</option>
+                              <option value="Condo">Condo</option>
+                              <option value="Farm">Farm</option>
+                              <option value="Other">Other</option>
+                            </select>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>If other, explain:</label>
+                            <input type="text" class="form-control" name="explain_residence" id="explain_residence">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Do you rent or own your residence?</label>
+                            <select class="form-control" id="type_ownership" required data-validation-required-message="Please select your type of ownership of residence.">
+                              <option value="Rent" selected="selected">Rent</option>
+                              <option value="Own">Own</option>
+                            </select>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>If you rent, does your landlord permit animals?</label>
+                            <input type="text" class="form-control" name="permit_animals" id="permit_animals">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Please list the name and contact information for your landlord</label>
+                            <input type="text" class="form-control" name="landlord_information" id="landlord_information">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Occupation:</label>
+                            <input type="text" class="form-control" name="occupation" id="occupation">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Age:</label>
+                            <input type="text" class="form-control" name="age" id="age" required data-validation-required-message="Please enter your age.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Do you rent or own your residence?</label>
+                            <select class="form-control" id="family_schedule">
+                              <option value="Very Busy" selected="selected">Very Busy</option>
+                              <option value="Busy">Busy</option>
+                              <option value="Not Busy">Not Busy</option>
+                            </select>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Are there allergies in the household?</label>
+                            <select class="form-control" id="allergies_household" name="allergies_household" required data-validation-required-message="Please select option.">
+                              <option value="Yes" selected="selected">Yes</option>
+                              <option value="No">No</option>
+                              <option value="Unknown">Unknown</option>
+                            </select>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Who will be the primary and secondary caregivers? What is the relation of the secondary caregiver to you?</label>
+                            <input type="text" class="form-control" name="caregivers_information" id="caregivers_information">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Have you owned dogs before?</label>
+                            <select class="form-control" id="owned_dogs_before" required data-validation-required-message="Please select your type of ownership of residence.">
+                              <option value="Yes" selected="selected">Yes</option>
+                              <option value="No">No</option>
+                              <option value="Lived with dogs">Lived with dogs</option>
+                            </select>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Were they small, medium, or large dogs? (Select all that apply)</label>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="small" name="size_of_dogs[]" id="size_of_dogs_small"> Small
+                              </label>
+                              <label>
+                                <input type="checkbox" value="medium" name="size_of_dogs[]" id="size_of_dogs_medium">Medium
+                              </label>
+                              <label>
+                                <input type="checkbox" value="large" name="size_of_dogs[]" id="size_of_dogs_large">Large
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>List the age, gender and breed of current household pets:</label>
+                            <input type="text" class="form-control" name="dog_information" id="dog_information">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Are current pets spayed/neutered? If not, explain:</label>
+                            <input type="text" class="form-control" name="current_pets_info" id="current_pets_info">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Are current pets up to date on vaccinations? If not, please explain:</label>
+                            <input type="text" class="form-control" name="vaccination_info" id="vaccination_info">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Is your yard fully fenced?</label>
+                            <input type="text" class="form-control" name="fully_fenced" id="fully_fenced" required data-validation-required-message="Please select option.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Where will the dog stay during the day?</label>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="Loose in the house" name="dogs_stay[]" id="dogs_stay_loose"> Loose in the house
+                              </label>
+                              <label>
+                                <input type="checkbox" value="Traded inside" name="dogs_stay[]" id="dogs_stay_traded">Traded inside
+                              </label>
+                              <label>
+                                <input type="checkbox" value="Dog Run" name="dogs_stay[]" id="dogs_stay_run">Dog Run
+                              </label>
+                              <label>
+                                <input type="checkbox" value="Fenced yard" name="dogs_stay[]" id="dogs_stay_yard">Fenced yard
+                              </label>
+                              <label>
+                                <input type="checkbox" value="Other" name="dogs_stay[]" id="dogs_stay_other">Other
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>How many hours a day will the dog be on its own? Please give answers for both work days and non-work days:</label>
+                            <input type="text" class="form-control" name="dog_be_own" id="dog_be_own" required data-validation-required-message="Please fill out this field.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>If the dog is alone for more than 4 hours at a time, will you have someone available to periodically visit the dog?</label>
+                            <input type="text" class="form-control" name="someone_available" id="someone_available" required data-validation-required-message="Please fill out this field.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>How much time will you have daily for exercising the dog?</label>
+                            <input type="text" class="form-control" name="daily_exercising" id="daily_exercising" required data-validation-required-message="Please fill out this field.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Have you ever fostered before?</label>
+                            <select class="form-control" id="fostered_dogs_before" required data-validation-required-message="Please select your option.">
+                              <option value="Yes" selected="selected">Yes</option>
+                              <option value="No">No</option>
+                            </select>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>If yes, please tell us more about your foster experience.</label>
+                            <input type="text" class="form-control" name="foster_experience" id="foster_experience">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>What is your age preference? (Select all that apply)</label>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="Very Young puppy (under 8 weeks)" name="dogs_age_preference[]" id="dogs_age_veryyoung">Very Young puppy (under 8 weeks)
+                              </label>
+                              <label>
+                                <input type="checkbox" value="Young Puppy (8 weeks to 4 months)" name="dogs_age_preference[]" id="dogs_stay_young">Young Puppy (8 weeks to 4 months)
+                              </label>
+                              <label>
+                                <input type="checkbox" value="Older Puppy (4 months to a year)" name="dogs_age_preference[]" id="dogs_stay_older">Older Puppy (4 months to a year)
+                              </label>
+                              <label>
+                                <input type="checkbox" value="Adult dog (over a year)" name="dogs_age_preference[]" id="dogs_stay_adult">Adult dog (over a year)
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Note- Very young pups may require bottle feeding, feeding times up to 4-5 times a day. All pups will be required to be let out a number of times each day. Your schedule must allow for this</label>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Are you prepared to foster a dog of unknown age, breed, size, gender, etc? What would be some situations you would be unable to, or feel uneasy about fostering?</label>
+                            <input type="text" class="form-control" name="unknown_dog" id="unknown_dog" required data-validation-required-message="Please fill out this field.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>How did you hear about CC RezQs?</label>
+                            <input type="text" class="form-control" name="hear_about" id="hear_about">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Anything else you would like to tell us? (Scheduled vacations, times you're unavailable, when you're available to start fostering, interest in taking a litter, etc.)</label>
+                            <input type="text" class="form-control" name="other_information" id="other_information">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <input type="submit" class="btn btn-primary" value="Apply For Foster">
+                </form>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>

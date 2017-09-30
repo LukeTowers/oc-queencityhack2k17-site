@@ -1,0 +1,6 @@
+plugin:
+    name: 'teamate.ccrezqs::lang.plugin.name'
+    description: 'teamate.ccrezqs::lang.plugin.description'
+    author: 'Team Ate'
+    icon: oc-icon-adjust
+    homepage: 'https://doggo.pewdiepie.ca/'
