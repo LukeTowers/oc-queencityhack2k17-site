@@ -22,16 +22,16 @@ notFoundMessage = "Record not found"
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a>
                     </li>
-                    <li class="active">About</li>
+                    <li class="active">Dog information</li>
                 </ol>
             </div>
         </div>
         <!-- /.row -->
-
+        {{record|json_encode}}
         <!-- Intro Content -->
         <div class="row">
             <div class="col-md-6">
-                <img class="img-responsive" src="http://lorempixel.com/700/450/nature/5/MaterialBootstrap/" alt="">
+                <img class="img-responsive" src="{{record.photos.first().getThumb('700','450')}}" alt="">
             </div>
             <div class="col-md-6">
                 <h2>About Modern Business</h2>
@@ -42,12 +42,10 @@ notFoundMessage = "Record not found"
         </div>
         <!-- /.row -->
 
-
-
-        <!-- Our Customers -->
+        <!-- Other Photos -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Our Customers</h2>
+                <h2 class="page-header">Other Photos</h2>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
                 <img class="img-responsive customer-img" src="http://lorempixel.com/500/300/nature/3/MaterialBootstrap/" alt="">
@@ -69,6 +67,6 @@ notFoundMessage = "Record not found"
             </div>
         </div>
         <!-- /.row -->
-        
+
 
         <hr>
