@@ -150,3 +150,8 @@ footer {
 .checkbox .checkbox-material .check {
     margin-right: 0.5em;
 }
+
+.dog-panel {
+    display: block;
+    text-decoration: none !important;
+}

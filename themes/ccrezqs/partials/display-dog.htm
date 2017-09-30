@@ -1,4 +1,4 @@
-<div class="col-md-4 text-center">
+<a class="col-md-4 text-center dog-panel" href="{{ 'dogslisting' | page({id: dog.id}) }}">
     <div class="thumbnail">
         <img class="img-responsive" src="{{ dog.photos.first().getThumb('700','450')}}" alt="">
         <div class="caption">
@@ -8,4 +8,4 @@
             <p>{{ dog.general_info.situation }}</p>
         </div>
     </div>
-</div>
+</a>
