@@ -5,6 +5,7 @@ fields:
         type: dropdown
         options:
             inactive: Inactive
+            registerd: Registered
             applied: Applied
             active: Approved
         tab: rainlab.user::lang.user.account

@@ -85,7 +85,7 @@ function onStart(){
                     </div>
                     <div class="panel-body">
                         <p>Become a Foster! When you become a foster, you give a dog the opportunity to be saved. Our foster families are extremely important to us, as there is no way we could do what we do without them!  We are</p>
-                        <a href="register" class="btn btn-success">Become a Foster</a>
+                        <a href="{{ 'foster' | page }}" class="btn btn-success">Become a Foster</a>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@ function onStart(){
                     </div>
                     <div class="panel-body">
                         <p>These are the most common questions we are often asked.  If there is anything you are curious about that is not on this page, please don’t hesitate to contact us with your questions.<br/>&nbsp;</p>
-                        <a href="faq" class="btn btn-success">Learn More</a>
+                        <a href="{{ 'faq' | page }}" class="btn btn-success">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -120,17 +120,7 @@ function onStart(){
                 <h2 class="page-header">Dogs Available</h2>
             </div>
             {% for record in records %}
-            <div class="col-md-4 text-center">
-                <div class="thumbnail">
-                    <img class="img-responsive" src="{{record.photos.first().getThumb('700','450')}}" alt="">
-                    <div class="caption">
-                        <h3>{{record.name}}<br>
-                            <small>{{record.gender}}, {{record.size}}, {{record.general_info.breed}}</small>
-                        </h3>
-                        <p>{{record.general_info.temperament}}</p>
-                    </div>
-                </div>
-            </div>
+                {% partial 'display-dog' dog=record %}
             {% endfor %}
         </div>
         <!-- /.row -->

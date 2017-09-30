@@ -1,5 +1,6 @@
 <?php namespace TeamAte\Ccrezqs\Models;
 
+use Auth;
 use Model;
 
 /**
@@ -33,4 +34,11 @@ class Dog extends Model
     public $attachMany = [
         'photos' => 'System\Models\File'
     ];
+
+
+    public function scopeCurrentUser($query)
+    {
+        $userId = ($user = Auth::getUser()) ? $user->id : 0;
+        return $query->where('foster_id', $userId);
+    }
 }

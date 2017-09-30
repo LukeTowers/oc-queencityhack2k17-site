@@ -9,7 +9,7 @@ class BuilderTableCreateTeamateCcrezqsFosters extends Migration
     {
         Schema::table('users', function($table)
         {
-            $table->string('foster_status')->default('inactive');
+            $table->string('foster_status')->default('registered');
             $table->json('contact_info')->nullable();
             $table->json('residence')->nullable();
             $table->json('personal_info')->nullable();

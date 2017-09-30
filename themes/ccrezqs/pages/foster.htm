@@ -6,13 +6,39 @@ is_hidden = 0
 [session]
 security = "user"
 redirect = "register"
+
+[builderList]
+modelClass = "TeamAte\Ccrezqs\Models\Dog"
+scope = "scopeCurrentUser"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<?php
+function onRun() {
+        $this['user'] = Auth::getUser();
+    }
+?>
 ==
 <div class="container">
     <div class="row">
-        <div class="well">
-            <!-- if has no doggos -->
-                <p>You don't have any dogs assigned to you. <a href="{{ 'applications/foster' | page() }}">Fill out the Foster Application Form to get started</a></p>
-            <!-- Else -->
+        <div class="well" style="padding-top: 3em;">
+            {% if user.foster_status == 'registered' %}
+                <p><a href="{{ 'applications/foster' | page() }}">Fill out the Foster Application Form to get started</a></p>
+            {% elseif user.foster_status == 'applied' %}
+                <p>Your application has been received and is pending approval. Check back soon!</p>
+            {% elseif user.foster_status == 'inactive' %}
+                <p>Your account is currently inactive</p>
+            {% elseif user.foster_status == 'active' %}
+                <div class="row">
+                    <h1 class="modal-title">Your dogs</h1>
+                    {% for record in records %}
+                        {% partial 'display-dog' dog=record %}
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>

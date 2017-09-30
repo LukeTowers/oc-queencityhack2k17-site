@@ -19,6 +19,15 @@ class ApplicationFoster extends ComponentBase
         return [];
     }
 
+    public function onRun()
+    {
+        $user = Auth::getUser();
+        if (!$user || ($user->foster_status !== 'registered')) {
+            Flash::info('You have already submitted an application');
+            return redirect('/foster');
+        }
+    }
+
     public function onApply()
     {
         $user = Auth::getUser();
