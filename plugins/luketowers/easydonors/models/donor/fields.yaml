@@ -1,0 +1,43 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: 'luketowers.easydonors::lang.models.donor.name'
+        span: left
+        
+    surname:
+        label: 'luketowers.easydonors::lang.models.donor.surname'
+        span: right
+        
+    email:
+        label: 'luketowers.easydonors::lang.models.donor.email'
+        span: left
+
+    data[preferences][accepts_marketing]:
+        label: 'luketowers.easydonors::lang.models.donor.accepts_marketing'
+        span: right
+        type: checkbox
+        default: true
+        
+    address:
+        label: 'luketowers.easydonors::lang.models.donoraddress.label'
+        span: full
+        type: partial
+        path: $/luketowers/easydonors/models/donor/field.relation.address.htm
+        
+    donation_instructions:
+        label: 'luketowers.easydonors::lang.models.donation.plural_label'
+        span: full
+        type: hint
+        path: $/luketowers/easydonors/models/donor/field.instructions.donations.htm
+        context: create
+        
+    donations:
+        label: 'luketowers.easydonors::lang.models.donation.plural_label'
+        span: full
+        type: partial
+        path: $/luketowers/easydonors/models/donor/field.relation.donations.htm
+        context: update

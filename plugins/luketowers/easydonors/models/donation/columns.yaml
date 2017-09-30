@@ -1,0 +1,22 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    donor_name: 
+        label: 'luketowers.easydonors::lang.models.donation.donor_name'
+        searchable: true
+        sortable: true
+
+    amount:
+        label: 'luketowers.easydonors::lang.models.donation.amount'
+        sortable: true
+        searchable: true
+        
+    currency:
+        label: 'luketowers.easydonors::lang.models.donation.currency'
+        sortable: true
+        
+    date:
+        label: 'luketowers.easydonors::lang.models.donation.date'
+        type: datetime

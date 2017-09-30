@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Donor
+
+# Model Form Field configuration
+form: $/luketowers/easydonors/models/donor/fields.yaml
+
+# Model Class name
+modelClass: LukeTowers\EasyDonors\Models\Donor
+
+# Default redirect location
+defaultRedirect: luketowers/easydonors/donors
+
+# Create page
+create:
+    title: Create Donor
+    redirect: luketowers/easydonors/donors/update/:id
+    redirectClose: luketowers/easydonors/donors
+
+# Update page
+update:
+    title: Edit Donor
+    redirect: luketowers/easydonors/donors
+    redirectClose: luketowers/easydonors/donors
+
+# Preview page
+preview:
+    title: Preview Donor

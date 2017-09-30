@@ -1,0 +1,6 @@
+plugin:
+    name: 'luketowers.easydonors::lang.plugin.name'
+    description: 'luketowers.easydonors::lang.plugin.description'
+    author: 'Luke Towers'
+    icon: oc-icon-gift
+    homepage: 'https://luketowers.ca/'

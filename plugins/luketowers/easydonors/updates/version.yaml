@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table luketowers_easydonors_donors'
+    - builder_table_create_luketowers_easydonors_donors.php
+1.0.3:
+    - 'Created table luketowers_easydonors_donor_addresses'
+    - builder_table_create_luketowers_easydonors_donor_addresses.php
+1.0.4:
+    - 'Created table luketowers_easydonors_donations'
+    - builder_table_create_luketowers_easydonors_donations.php
+1.0.5:
+    - 'Created table luketowers_easydonors_receipts'
+    - builder_table_create_luketowers_easydonors_receipts.php
+1.0.6:
+    - 'Created table luketowers_easydonors_donation_addresses'
+    - builder_table_create_luketowers_easydonors_donation_addresses.php

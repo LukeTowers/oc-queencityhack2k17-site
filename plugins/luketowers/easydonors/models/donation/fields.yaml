@@ -1,0 +1,30 @@
+# TODO: Prevent updating of donations after they are created
+
+fields:
+    amount:
+        label: 'luketowers.easydonors::lang.models.donation.amount'
+        type: number
+        span: left
+        placeholder: 'luketowers.easydonors::lang.models.donation.placeholder_amount'
+        
+    currency:
+        label: 'luketowers.easydonors::lang.models.donation.currency'
+        type: dropdown
+        span: right
+        
+    date:
+        label: 'luketowers.easydonors::lang.models.donation.date'
+        type: datepicker
+        mode: datetime
+        default: now
+        span: left
+        
+    data[notes]:
+        label: 'luketowers.easydonors::lang.models.donation.notes'
+        type: textarea
+        span: right
+        size: small
+    
+    donor_name:
+        label: 'luketowers.easydonors::lang.models.donation.name'
+        span: left

@@ -1,0 +1,18 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+address:
+    deferredBinding: true
+    label: 'luketowers.easydonors::lang.models.donoraddress.label'
+    list: $/luketowers/easydonors/models/donoraddress/columns.yaml
+    form: $/luketowers/easydonors/models/donoraddress/fields.yaml
+    view:
+        toolbarButtons: create|update
+        
+donations:
+    label: 'luketowers.easydonors::lang.models.donation.label'
+    list: $/luketowers/easydonors/models/donation/columns.yaml
+    form: $/luketowers/easydonors/models/donor/donation.fields.yaml
+    view:
+        toolbarButtons: create|delete

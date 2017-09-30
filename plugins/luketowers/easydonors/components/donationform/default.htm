@@ -1,0 +1,215 @@
+{{ 
+	form_open({
+		'id': 'donation-form',
+		'data-request': __SELF__ ~ '::onSubmit',
+	}) 
+}}
+	<div class="row">
+		<div class="col-xs-12"><span class="payment-errors"></span></div>
+	</div>
+		
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="form-group text-center has-feedback">
+				<div class="btn-group btn-group-lg" data-toggle="buttons">
+					<label class="btn btn-default active">
+						<input type="radio" name="donor_type" id="donor_type" value="Personal" autocomplete="off" checked>Personal
+					</label>
+					<label class="btn btn-default">
+						<input type="radio" name="donor_type" id="donor_type" value="Business" autocomplete="off">Business
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row hidden" id="email-login-warning">
+		<div class="col-xs-12">
+			<p class="bg-success" style="padding: 5px;">You must be logged in to make a donation with that email address. <a id="login-link" href="{{ 'account/login' | theme }}">Login now</a></p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="form-group has-feedback">
+				<label form="email">Email Address</label>
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span></div>
+					<input type="email" id="email" name="email" class="form-control input-lg" placeholder="email@domain.com" {{ __SELF__.inputDefault('email') }}>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row hidden" id="company-row">
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label for="company_name">Company</label>
+				<input type="text" id="company_name" name="company_name" class="form-control input-lg" placeholder="Company Name Inc." {{ __SELF__.inputDefault('company_name') }}>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="name">First Name</label>
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></span></div>
+					<input type="text" id="name" name="name" class="form-control input-lg" placeholder="John" {{ __SELF__.inputDefault('name') }}>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="name">Last Name</label>
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></span></div>
+					<input type="text" id="surname" name="surname" class="form-control input-lg" placeholder="Doe" {{ __SELF__.inputDefault('surname') }}>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row" style="margin-top: 10px;" id="custom-amount-row">
+		<div class="col-xs-4 col-xs-offset-4">
+			<label for="amount">Amount</label>
+			<div class="input-group">
+				<div class="input-group-addon input-lg"><strong>$</strong></div>
+				<input type="text" name="amount" id="amount" class="input-lg" placeholder="20.00" {{ __SELF__.inputDefault('amount') }}>
+			</div>
+		</div>
+	</div>
+
+	<div class="row text-center">
+		<div class="col-xs-12">&nbsp;</div>
+	</div>
+
+	<div id="cc_error_row" class="row" style="display: none;">
+		<div class="col-xs-12">
+			<div class="alert alert-danger">
+				<ul id="cc_error_container">
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label for="cc_number">Credit Card Number</label>
+				<input type="tel" class="form-control input-lg" id="cc_number" data-stripe="number" maxlength="16" placeholder="4242424242424242" value="4242424242424242">
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-3">
+			<div class="form-group">
+				<label for="cc_exp_month">Expiry Month</label>
+				<input type="tel" class="form-control input-lg" id="cc_exp_month" data-stripe="exp-month" maxlength="2" placeholder="12" value="12">
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<div class="form-group">
+				<label for="cc_exp_year">Expiry Year</label>
+				<input type="tel" class="form-control input-lg" id="cc_exp_year" data-stripe="exp-year" maxlength="4" placeholder="{{ 'next year' | date('Y') }}" value="16">
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<div class="form-group">
+				<label for="cc_cvv">CVV</label>
+				<input type="tel" class="form-control input-lg" id="cc_cvv" data-stripe="cvc" maxlength="4" placeholder="CVV" value="100"ß>
+			</div>
+		</div>
+	</div>
+    		
+	<script type="text/javascript">
+		jQuery(function($) {	
+			localize_address_fields($('#country option:selected').val());
+			
+			$('#country').change(function() {
+				localize_address_fields(this.value)
+			});
+		});
+		
+		function localize_address_fields(selected_country) {
+			switch (selected_country) {
+				case 'Canada':
+					$('.postalcode').show();
+					$('.city').show();
+					$('.province').show();
+					
+					$("#country-warning").attr('class', 'row hide');
+					$('#donate-now-button').prop('disabled', false);
+					break;
+				case 'United States':
+					$('.postalcode').show();
+					$('.city').show();
+					$('.province').show();
+					
+					$("#country-warning").attr('class', 'row hide');
+					$('#donate-now-button').prop('disabled', false);
+					break;
+				default:
+					$('.postalcode').hide();
+					$('.city').hide();
+					$('.province').hide();
+					
+					$("#country-warning").attr('class', 'row show');
+					$('#donate-now-button').prop('disabled', true);
+			}
+		}
+	</script>
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label for="address">Address</label>
+				<input type="text" name="address" id="address" class="form-control input-lg" placeholder="123 Smith Street" {{ __SELF__.inputDefault('address') }}>
+			</div>
+		</div>
+	</div>
+	<div class="row hidden" id="country-warning">
+		<div class="col-xs-12">
+			<div class="form-group">
+				<p class="bg-danger" style="padding: 5px;">We currently do not accept donations online from countries other then Canada or the United States.</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6 country">
+			<label for="country">Country</label>
+			<select name="country" id="country" class="form-control input-lg">
+				<option value="Canada" selected="selected">Canada</option>
+				<option value="United States">United States</option>
+				<option value="Other">Other</option>
+			</select>
+		</div>
+		<div class="col-xs-6 postalcode">
+			<label for="postalcode">Postal Code</label>
+			<input type="text" id="postalcode" name="postalcode" class="form-control input-lg" placeholder="A0A 0A0" {{ __SELF__.inputDefault('postalcode') }}>
+		</div>
+	</div>
+	<div class="row" style="margin-top: 10px;">
+		<div class="col-xs-6 city">
+			<label for="city">City</label>
+			<input type="text" id="city" name="city" class="form-control input-lg" placeholder="City" {{ __SELF__.inputDefault('city') }}>
+		</div>
+		<div class="col-xs-6 province">
+			<label for="province">Province</label>
+			<input type="text" id="province" name="province" class="form-control input-lg" placeholder="Province" {{ __SELF__.inputDefault('province') }}>
+		</div>
+	</div>
+    
+	<div class="row text-center">
+		<div class="col-xs-12">&nbsp;</div>
+	</div>
+	
+	<div class="row text-center">
+		<div class="col-xs-12">
+			<button type="submit" class="btn btn-primary btn-lg" id="donate-now-button" name="btn-submit">Submit</button>
+		</div>
+	</div>
+	
+{{ form_close() }}

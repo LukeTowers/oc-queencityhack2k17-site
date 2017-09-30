@@ -1,0 +1,36 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    address:
+        label: 'luketowers.easydonors::lang.models.donoraddress.address'
+        span: left
+        required: true
+     
+    address_2:
+        label: 'luketowers.easydonors::lang.models.donoraddress.address2'
+        span: right
+        
+    city:
+        label: 'luketowers.easydonors::lang.models.donoraddress.city'
+        span: left
+        required: true
+    
+    postal_code:
+        label: 'luketowers.easydonors::lang.models.donoraddress.postal_code'
+        span: right
+        required: true
+        
+    province:
+        label: 'luketowers.easydonors::lang.models.donoraddress.province'
+        type: dropdown
+        span: left
+        required: true
+        
+    country:
+        label: 'luketowers.easydonors::lang.models.donoraddress.country'
+        type: dropdown
+        span: right
+        required: true
