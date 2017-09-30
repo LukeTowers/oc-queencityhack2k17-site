@@ -121,12 +121,9 @@ fields:
 
     residence[yard_fenced]:
         label: Is your yard fully fenced?
-        options:
-            yes: Yes
-            no: No
         span: auto
         tab: Residence
-        type: radio
+        type: text
 
     _personal_info:
         label: Personal Information
@@ -227,7 +224,7 @@ fields:
             fenced_yard: Fenced yard
             other: Other
         span: auto
-        type: dropdown
+        type: checkboxlist
         tab: Animal Info
 
     animal_info[dog_by_self]:
@@ -238,11 +235,8 @@ fields:
 
     animal_info[dog_check]:
         label: If the dog is alone for more than 4 hours at a time, will you have someone available to periodically visit the dog?
-        options:
-            yes: Yes
-            no: No
         span: auto
-        type: radio
+        type: text
         tab: Animal Info
 
 
