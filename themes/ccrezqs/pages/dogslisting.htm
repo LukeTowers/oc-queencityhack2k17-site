@@ -10,15 +10,13 @@ modelKeyColumn = "id"
 displayColumn = "name"
 notFoundMessage = "Record not found"
 ==
-<!-- Page Content -->{% component 'builderDetails' %}
+<!-- Page Content -->
     <div class="container">
     <div class="well">
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">About
-                    <small>Subheading</small>
-                </h1>
+                <h1 class="page-header">Dog Information</h1>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a>
                     </li>
@@ -27,43 +25,101 @@ notFoundMessage = "Record not found"
             </div>
         </div>
         <!-- /.row -->
-        {{record|json_encode}}
         <!-- Intro Content -->
         <div class="row">
             <div class="col-md-6">
                 <img class="img-responsive" src="{{record.photos.first().getThumb('700','450')}}" alt="">
             </div>
             <div class="col-md-6">
-                <h2>About Modern Business</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+                <h2>{{record.name}}</h2>
+                <p>{{record.general_info.temperament}}</p>
             </div>
         </div>
         <!-- /.row -->
+        <div class="row">
+          <div class="col-lg-12">
+              <h2 class="page-header">Basic Information</h2>
+          </div>
+          <div class="col-sm-6">
+            <div> <b>Gender:</b> {{record.gender}}</div>
+            <div> <b>Status:</b> {{record.status}}</div>
+            <div> <b>Size:</b> {{record.size}}</div>
+
+          </div>
+          <div class="col-sm-6">
+            <div> <b>Birthdate:</b> {{record.birthdate}}</div>
+            <div> <b>Care Start Date:</b> {{record.care_start}}</div>
+            <div> <b>Situation:</b> {{record.general_info.situation}}</div>
+          </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Bio Information</h2>
+        </div>
+        <div class="col-sm-6">
+          <div> <b>Breed:</b> {{record.general_info.breed}}</div>
+          <div> <b>Litter:</b> {{record.general_info.litter}}</div>
+          <div> <b>Kennel Training:</b> {{record.general_info.kennel_training}}</div>
+          <div> <b>Temperament:</b> {{record.general_info.temperament}}</div>
+
+        </div>
+        <div class="col-sm-6">
+          <div> <b>Colouring:</b> {{record.general_info.colouring}}</div>
+          <div> <b>From:</b> {{record.from}}</div>
+          <div> <b>Cat/Dog Trained:</b> {{record.general_info.dog_trained}}</div>
+          <div> <b>Concerns:</b> {{record.general_info.concerns}}</div>
+        </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+          <h2 class="page-header">Medical Information</h2>
+      </div>
+      <div class="col-sm-6">
+        <div> <b>Spayed/Neutered:</b> {{record.medical_info.neuter_date}}</div>
+        <h4 class="page-header">Vet Visits Information</h4>
+        {% for vet_info in record.medical_info.vet_visits %}
+          <div> <b>Visit Date:</b> {{vet_info.visit_date}}</div>
+          <div> <b>Outcome of visit:</b> {{vet_info.outcome}}</div>
+        {% endfor %}
+        <h4 class="page-header">Dewormer Information</h4>
+        <div> <b>Dosage Type:</b> {{record.medical_info.medications.dewormer.type}}</div>
+        <div> <b>Dose 1 Date:</b> {{record.medical_info.medications.dewormer.dose_1}}</div>
+        <div> <b>Dose 2 Date:</b> {{record.medical_info.medications.dewormer.dose_2}}</div>
+        <div> <b>Dose 3 Date:</b> {{record.medical_info.medications.dewormer.dose_3}}</div>
+      </div>
+      <div class="col-sm-6">
+        <div> <b>Fixed:</b> {% if record.is_fixed == 1 %}
+    Yes
+    {% else %}
+    No
+{% endif %}</div>
+        <h4 class="page-header">Additional Medications</h4>
+        <div> <b>DA2PP 1:</b> {{record.medical_info.medications.da2pp_1}}</div>
+        <div> <b>DA2PP 2:</b> {{record.medical_info.medications.da2pp_2}}</div>
+        <div> <b>DA2PP 3:</b> {{record.medical_info.medications.da2pp_3}}</div>
+        <div> <b>Rabies:</b> {{record.medical_info.medications.rabies}}</div>
+        {% for additional_medication in record.medical_info.medications.additional_medications %}
+          <div> <b>Medication Name:</b> {{additional_medication.name}}</div>
+          <div> <b>Dose 1:</b> {{additional_medication.dose_1}}</div>
+          <div> <b>Dose 2:</b> {{additional_medication.dose_2}}</div>
+          <div> <b>Dose 3:</b> {{additional_medication.dose_3}}</div>
+        {% endfor %}
+      </div>
+
+    </div>
 
         <!-- Other Photos -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Other Photos</h2>
+                <h2 class="page-header">Photos</h2>
             </div>
+            {% for photo in record.photos %}
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://lorempixel.com/500/300/nature/3/MaterialBootstrap/" alt="">
+                <img class="img-responsive customer-img" src="{{photo.getThumb('700','450')}}" alt="">
             </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://lorempixel.com/500/300/nature/1/MaterialBootstrap/" alt="">
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://lorempixel.com/500/300/nature/2/MaterialBootstrap/" alt="">
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://lorempixel.com/500/300/nature/2/MaterialBootstrap/" alt="">
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://lorempixel.com/500/300/nature/1/MaterialBootstrap/" alt="">
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="http://lorempixel.com/500/300/nature/3/MaterialBootstrap/" alt="">
-            </div>
+            {% endfor %}
         </div>
-        <!-- /.row -->
