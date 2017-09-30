@@ -1,0 +1,95 @@
+title = "Register"
+url = "/register/:code?"
+layout = "default"
+is_hidden = 0
+
+[account]
+redirect = "foster"
+paramCode = "code"
+forceSecure = 0
+==
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-centered" style="margin: 10em auto;">
+            <div class="well">
+                <h1 class="modal-title">Register</h1>
+            	<div class="signin-form">
+            		{{ form_ajax(
+            			'onRegister',
+            			{
+            				'data-request-data': {
+            					redirect: account.property('redirect')
+            				},
+            				class: 'form-horizontal'
+            			})
+            		}}
+            			<div class="form-group">
+            				<label class="col-sm-4 control-label" for="signin-name">Name</label>
+            				<div class="col-sm-8">
+            					<input
+            						required
+            						name="name"
+            						type="text"
+            						class="form-control signin-field"
+            						value="{{ form_value('name') }}"
+            						placeholder="Enter your first name"
+            						id="signin-name" />
+            				</div>
+            			</div>
+
+            			<div class="form-group">
+            				<label class="col-sm-4 control-label" for="signin-surname">Surname</label>
+            				<div class="col-sm-8">
+            					<input
+            						required
+            						name="surname"
+            						type="text"
+            						class="form-control signin-field"
+            						value="{{ form_value('surname') }}"
+            						placeholder="Enter your surname"
+            						id="signin-surname" />
+            				</div>
+            			</div>
+
+            			<div class="form-group">
+            				<label class="col-sm-4 control-label" for="signin-email">Email</label>
+            				<div class="col-sm-8">
+            					<input
+            						required
+            						name="email"
+            						type="text"
+            						class="form-control signin-field"
+            						value="{{ form_value('email') }}"
+            						placeholder="Enter your email"
+            						id="signin-email" />
+            				</div>
+            			</div>
+
+            			<div class="form-group">
+            				<label class="col-sm-4 control-label" for="signin-pass">Password</label>
+            				<div class="col-sm-8">
+            					<input
+            						required
+            						name="password"
+            						type="password"
+            						class="form-control signin-field"
+            						placeholder="Choose a password"
+            						id="signin-pass" />
+            				</div>
+            			</div>
+            			<div class="form-group">
+            				<div class="col-sm-offset-4 col-sm-8">
+            					<button type="submit" class="btn btn-primary">Register</button>
+            				</div>
+            			</div>
+            		{{ form_close() }}
+            	</div>
+            	<div class="row login-actions">
+            		<div class="col-sm-12">
+            			<span class="fa fa-question-circle"></span> Already have an account? <a class="signin-link" href="{{ 'app.account/auth-login' | page() }}">Login here.</a>
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>

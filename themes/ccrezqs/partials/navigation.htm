@@ -15,6 +15,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    <li class="{% if( this.page.id == 'register') %}active {% endif %}">
+                        <a href="{{ 'app.account/auth-register'|page }}">Register</a>
+                    </li>
                     <li class="{% if( this.page.id == 'allelements') %}active {% endif %}">
                         <a href="{{ 'allelements'|page }}">All Elements</a>
                     </li>

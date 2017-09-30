@@ -6,7 +6,7 @@ form:
         site_name:
             label: 'Site name'
             comment: 'The website name as it should appear on the front-end'
-            default: Material Bootstrap
+            default: Team Ate
     tabs:
         fields:
             meta_title:

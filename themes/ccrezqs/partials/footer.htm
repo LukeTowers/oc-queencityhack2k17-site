@@ -1,15 +1,16 @@
 ==
-<!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; {{ this.theme.site_name }} 2015</p>
-                </div>
-            </div>
-        </footer>
-    </div>
+        </div>
     </div>
     <!-- /.container -->
+
+     <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; {{ this.theme.site_name }} {{ date() | date('Y') }}</p>
+            </div>
+        </div>
+    </footer>
 
 	<!-- Scripts -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -22,34 +23,33 @@
 		'assets/javascript/app.js'
 	]|theme }}"></script>
 
-{% put scripts %}
+    {% put scripts %}
+        {% if (this.page.id=="allelements") %}
+            <script>
+                $(function() {
+                    $.material.init();
+                    $(".shor").noUiSlider({
+                        start: 40,
+                        connect: "lower",
+                        range: {
+                            min: 0,
+                            max: 100
+                        }
+                    });
 
-    {% if (this.page.id=="allelements") %}
-        <script>
-            $(function() {
-                $.material.init();
-                $(".shor").noUiSlider({
-                    start: 40,
-                    connect: "lower",
-                    range: {
-                        min: 0,
-                        max: 100
-                    }
+                    $(".svert").noUiSlider({
+                        orientation: "vertical",
+                        start: 40,
+                        connect: "lower",
+                        range: {
+                            min: 0,
+                            max: 100
+                        }
+                    });
                 });
-
-                $(".svert").noUiSlider({
-                    orientation: "vertical",
-                    start: 40,
-                    connect: "lower",
-                    range: {
-                        min: 0,
-                        max: 100
-                    }
-                });
-            });
-        </script>
-    {% endif %}
-{% endput %}
+            </script>
+        {% endif %}
+    {% endput %}
 
 	{% framework extras %}
 	{% scripts %}

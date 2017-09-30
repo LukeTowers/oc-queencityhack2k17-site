@@ -121,3 +121,24 @@ footer {
             }
             .icon-preview:hover i { color: #4285f4; }
             .icon-preview:hover span { display: block; cursor: text; }
+
+
+.col-centered {
+    float: none !important;
+    margin: 0 auto;
+}
+
+.modal-title {
+    text-align: center;
+    margin: 0.25em 0 1em;
+    border-bottom: 1px solid;
+    padding-bottom: 0.25em;
+}
+
+footer {
+    margin: 1em 0 0;
+    padding: 1em;
+    background: #009687;
+    color: #FFF;
+    text-align: center;
+}
