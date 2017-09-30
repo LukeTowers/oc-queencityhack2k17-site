@@ -1,0 +1,203 @@
+fields:
+    gender:
+        label: Gender
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    birthdate:
+        label: Birthdate
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    breed:
+        label: Breed
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    colouring:
+        label: Colouring
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    litter:
+        label: Litter
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    care_start:
+        label: 'Date brought into care'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    section1:
+        label: 'Vet Visit Information'
+        span: full
+        type: section
+    'medical_info[vet_visits]':
+        label: 'Vet Visits'
+        oc.commentPosition: ''
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                visit_date:
+                    label: 'Date of vet check'
+                    oc.commentPosition: ''
+                    mode: date
+                    span: full
+                    type: datepicker
+                outcome:
+                    label: Outcome
+                    size: ''
+                    oc.commentPosition: ''
+                    span: full
+                    type: textarea
+    section2:
+        label: 'Dewormer Information'
+        span: full
+        type: section
+    'medical_info[medications][dewormer][type]':
+        label: 'Dewormer Type'
+        oc.commentPosition: ''
+        span: auto
+        type: balloon-selector
+        options:
+            liquid: Liquid
+            pill: Pill
+    'medical_info[medications][dewormer][dose_2]':
+        label: 'Dose 2'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    'medical_info[medications][dewormer][dose_1]':
+        label: 'Dose 1'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    'medical_info[medications][dewormer][dose_3]':
+        label: 'Dose 3'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    'medical_info[medications][da2pp_1]':
+        label: 'DA2PP 1'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    'medical_info[medications][da2pp_2]':
+        label: 'DA2PP 2'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    'medical_info[medications][da2pp_3]':
+        label: 'DA2PP 3'
+        oc.commentPosition: ''
+        mode: datetime
+        span: auto
+        type: datepicker
+    'medical_info[medications][rabies]':
+        label: Rabies
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    section3:
+        label: 'Additional Medication'
+        span: full
+        type: section
+    repeater1:
+        label: 'Additional Medication'
+        oc.commentPosition: ''
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                'medical_info[medications][additional_medication][name]':
+                    label: 'Medication Name'
+                    oc.commentPosition: ''
+                    span: full
+                    type: text
+                'medical_info[medications][additional_medication][dose_1]':
+                    label: 'Dose 1'
+                    oc.commentPosition: ''
+                    mode: date
+                    span: full
+                    type: datepicker
+                'medical_info[medications][additional_medication][dose_2]':
+                    label: 'Dose 2'
+                    oc.commentPosition: ''
+                    mode: date
+                    span: full
+                    type: datepicker
+                'medical_info[medications][additional_medication][dose_3]':
+                    label: 'Dose 3'
+                    oc.commentPosition: ''
+                    mode: date
+                    span: full
+                    type: datepicker
+    'medical_info[neuter_date]':
+        label: Spray/Neuter
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    'general_info[temperament]':
+        label: Temperament
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    'general_info[concerns]':
+        label: Concerns
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    'general_info[kennel_training]':
+        label: 'Kennel Training'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    'general_info[dog_trained]':
+        label: 'Cat/Dog Trained'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    'general_info[situation]':
+        label: Situation
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    size:
+        label: Size
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    fixed:
+        label: Fixed
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    from:
+        label: From(Location)
+        span: auto
+        oc.commentPosition: ''
+        type: text
+tabs:
+    fields:
+        name:
+            label: Name
+            oc.commentPosition: ''
+            span: auto
+            type: text
+            tab: 'Tab 1'

@@ -1,0 +1,10 @@
+name: Dogs
+form: $/teamate/ccrezqs/models/dog/fields.yaml
+modelClass: TeamAte\Ccrezqs\Models\Dog
+defaultRedirect: teamate/ccrezqs/dogs
+create:
+    redirect: 'teamate/ccrezqs/dogs/update/:id'
+    redirectClose: teamate/ccrezqs/dogs
+update:
+    redirect: teamate/ccrezqs/dogs
+    redirectClose: teamate/ccrezqs/dogs

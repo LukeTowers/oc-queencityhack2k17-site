@@ -1,2 +1,5 @@
 1.0.1:
-    - Initialize plugin.
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table teamate_ccrezqs_dogs'
+    - builder_table_create_teamate_ccrezqs_dogs.php

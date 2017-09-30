@@ -4,3 +4,8 @@ plugin:
     author: 'Team Ate'
     icon: oc-icon-adjust
     homepage: 'https://doggo.pewdiepie.ca/'
+navigation:
+    dogs:
+        label: Dogs
+        url: teamate/ccrezqs/dogs
+        icon: icon-life-ring
