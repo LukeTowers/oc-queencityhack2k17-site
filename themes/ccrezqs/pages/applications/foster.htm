@@ -1,10 +1,10 @@
-title = "form"
-url = "/form"
+title = "Foster Application"
+url = "/foster/apply"
 layout = "default"
 is_hidden = "0"
 ==
 <!-- Page Content -->
-    <div class="container">
+<div class="container">
     <div class="well">
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
@@ -19,14 +19,12 @@ is_hidden = "0"
                 </ol>
             </div>
         </div>
-        <!-- /.row -->
+
         <!-- Foster Form -->
         <div class="row">
-            <div class="col-md-8">
-                <h3>Foster Information</h3>
-
+            <div class="col-md-8 col-centered">
                 <form data-request="onTest" data-request-update="thankyou: '#success'" data-request-confirm="Are You Sure!">
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>First Name:</label>
                             <input type="text" class="form-control" name="firstname" id="firstname" required data-validation-required-message="Please enter your first name.">
@@ -34,7 +32,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Last Name:</label>
                             <input type="text" class="form-control" name="lastname" id="lastname" required data-validation-required-message="Please enter your last name.">
@@ -42,50 +40,21 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label>Are you over the age of 18?</label>
-                            <div class="radio radio-primary">
-                                <label>
-                                    <input type="radio" value="yes" name="over_age" id="over_age_yes" class="form-control" required data-validation-required-message="Please select age option."><span class="circle"></span><span class="check"></span>
-                                    Yes
-                                </label>
-                            </div>
-                            <div class="radio radio-primary">
-                                <label>
-                                    <input type="radio" value="no" name="over_age" id="over_age_no" class="form-control" required data-validation-required-message="Please select age option."><span class="circle"></span><span class="check"></span>
-                                    No
-                                </label>
-                            </div>
-                            <p class="help-block"></p>
-                        </div>
-                    </div>
-
-
-
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Phone Number:</label>
                             <input type="tel" class="form-control" name="phone" id="phone" required data-validation-required-message="Please enter your phone number.">
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Email Address:</label>
                             <input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Please enter your email address.">
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label>Street Address:</label>
-                            <input type="text" class="form-control" name="street_address" id="street_address" required data-validation-required-message="Please enter your street address.">
-                            <p class="help-block"></p>
-                        </div>
-                    </div>
-
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Street Address:</label>
                             <input type="text" class="form-control" name="street" id="street" required data-validation-required-message="Please enter your street address.">
@@ -93,7 +62,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>City:</label>
                             <input type="text" class="form-control" name="city" id="city" required data-validation-required-message="Please enter your city.">
@@ -101,7 +70,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Province:</label>
                             <select class="form-control" id="province" required data-validation-required-message="Please select your province.">
@@ -123,7 +92,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Postal Code:</label>
                             <input type="text" class="form-control" name="postal" id="postal" required data-validation-required-message="Please enter your postal code.">
@@ -131,7 +100,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Type of Residence:</label>
                             <select class="form-control" id="type_residence" required data-validation-required-message="Please select your type of residence.">
@@ -145,15 +114,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label>If other, explain:</label>
-                            <input type="text" class="form-control" name="explain_residence" id="explain_residence">
-                            <p class="help-block"></p>
-                        </div>
-                    </div>
-
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Do you rent or own your residence?</label>
                             <select class="form-control" id="type_ownership" required data-validation-required-message="Please select your type of ownership of residence.">
@@ -164,7 +125,15 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
+                        <div class="controls">
+                            <label>If other, explain:</label>
+                            <input type="text" class="form-control" name="explain_residence" id="explain_residence">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>If you rent, does your landlord permit animals?</label>
                             <input type="text" class="form-control" name="permit_animals" id="permit_animals">
@@ -180,7 +149,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Occupation:</label>
                             <input type="text" class="form-control" name="occupation" id="occupation">
@@ -188,8 +157,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Age:</label>
                             <input type="text" class="form-control" name="age" id="age" required data-validation-required-message="Please enter your age.">
@@ -197,9 +165,9 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
-                            <label>Do you rent or own your residence?</label>
+                            <label>How busy is your family schedule?</label>
                             <select class="form-control" id="family_schedule">
                               <option value="Very Busy" selected="selected">Very Busy</option>
                               <option value="Busy">Busy</option>
@@ -209,7 +177,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Are there allergies in the household?</label>
                             <select class="form-control" id="allergies_household" name="allergies_household" required data-validation-required-message="Please select option.">
@@ -229,7 +197,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Have you owned dogs before?</label>
                             <select class="form-control" id="owned_dogs_before" required data-validation-required-message="Please select your type of ownership of residence.">
@@ -241,7 +209,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Were they small, medium, or large dogs? (Select all that apply)</label>
                             <div class="checkbox">
@@ -267,7 +235,7 @@ is_hidden = "0"
                     </div>
 
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Are current pets spayed/neutered? If not, explain:</label>
                             <input type="text" class="form-control" name="current_pets_info" id="current_pets_info">
@@ -275,7 +243,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Are current pets up to date on vaccinations? If not, please explain:</label>
                             <input type="text" class="form-control" name="vaccination_info" id="vaccination_info">
@@ -283,7 +251,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Is your yard fully fenced?</label>
                             <input type="text" class="form-control" name="fully_fenced" id="fully_fenced" required data-validation-required-message="Please select option.">
@@ -291,7 +259,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Where will the dog stay during the day?</label>
                             <div class="checkbox">
@@ -314,7 +282,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>How many hours a day will the dog be on its own? Please give answers for both work days and non-work days:</label>
                             <input type="text" class="form-control" name="dog_be_own" id="dog_be_own" required data-validation-required-message="Please fill out this field.">
@@ -322,7 +290,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>If the dog is alone for more than 4 hours at a time, will you have someone available to periodically visit the dog?</label>
                             <input type="text" class="form-control" name="someone_available" id="someone_available" required data-validation-required-message="Please fill out this field.">
@@ -330,7 +298,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>How much time will you have daily for exercising the dog?</label>
                             <input type="text" class="form-control" name="daily_exercising" id="daily_exercising" required data-validation-required-message="Please fill out this field.">
@@ -338,7 +306,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Have you ever fostered before?</label>
                             <select class="form-control" id="fostered_dogs_before" required data-validation-required-message="Please select your option.">
@@ -349,7 +317,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>If yes, please tell us more about your foster experience.</label>
                             <input type="text" class="form-control" name="foster_experience" id="foster_experience">
@@ -357,7 +325,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>What is your age preference? (Select all that apply)</label>
                             <div class="checkbox">
@@ -377,13 +345,13 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Note- Very young pups may require bottle feeding, feeding times up to 4-5 times a day. All pups will be required to be let out a number of times each day. Your schedule must allow for this</label>
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-grou col-sm-6p">
                         <div class="controls">
                             <label>Are you prepared to foster a dog of unknown age, breed, size, gender, etc? What would be some situations you would be unable to, or feel uneasy about fostering?</label>
                             <input type="text" class="form-control" name="unknown_dog" id="unknown_dog" required data-validation-required-message="Please fill out this field.">
@@ -391,7 +359,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>How did you hear about CC RezQs?</label>
                             <input type="text" class="form-control" name="hear_about" id="hear_about">
@@ -399,7 +367,7 @@ is_hidden = "0"
                         </div>
                     </div>
 
-                    <div class="control-group form-group">
+                    <div class="control-group form-group col-sm-6">
                         <div class="controls">
                             <label>Anything else you would like to tell us? (Scheduled vacations, times you're unavailable, when you're available to start fostering, interest in taking a litter, etc.)</label>
                             <input type="text" class="form-control" name="other_information" id="other_information">
@@ -412,8 +380,4 @@ is_hidden = "0"
                     <input type="submit" class="btn btn-primary" value="Apply For Foster">
                 </form>
             </div>
-
         </div>
-        <!-- /.row -->
-
-        <hr>
