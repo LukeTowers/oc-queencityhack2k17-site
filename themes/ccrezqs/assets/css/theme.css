@@ -142,3 +142,11 @@ footer {
     color: #FFF;
     text-align: center;
 }
+
+.checkbox label {
+    display: block;
+}
+
+.checkbox .checkbox-material .check {
+    margin-right: 0.5em;
+}
