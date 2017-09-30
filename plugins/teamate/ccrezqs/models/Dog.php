@@ -41,4 +41,9 @@ class Dog extends Model
         $userId = ($user = Auth::getUser()) ? $user->id : 0;
         return $query->where('foster_id', $userId);
     }
+
+    public function scopeAvailable($query)
+    {
+        return $query->where('foster_id', null);
+    }
 }
