@@ -37,6 +37,9 @@ function onRun() {
                     {% for record in records %}
                         {% partial 'display-dog' dog=record %}
                     {% endfor %}
+                    {% if records is empty %}
+                        <p>You don't appear to have any dogs assigned to you right now. How unfortunate :(</p>
+                    {% endif %}
                 </div>
             {% endif %}
         </div>
