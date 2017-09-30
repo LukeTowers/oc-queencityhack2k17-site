@@ -1,18 +1,16 @@
 title = "Dog Listing"
-url = "/dog-listing"
+url = "/view-dog/:id"
 layout = "default"
 is_hidden = 0
 
-[petsList]
+[builderDetails]
 modelClass = "TeamAte\Ccrezqs\Models\Dog"
-scope = "-"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
 displayColumn = "name"
-noRecordsMessage = "No records found"
-detailsPage = "-"
-detailsUrlParameter = "id"
-pageNumber = "{{ :page }}"
+notFoundMessage = "Record not found"
 ==
-<!-- Page Content -->
+<!-- Page Content -->{% component 'builderDetails' %}
     <div class="container">
     <div class="well">
         <!-- Page Heading/Breadcrumbs -->
@@ -71,6 +69,6 @@ pageNumber = "{{ :page }}"
             </div>
         </div>
         <!-- /.row -->
-        {% component 'petsList' %}
+        
 
         <hr>
