@@ -18,16 +18,8 @@ class BuilderTableCreateLuketowersEasydonorsDonors extends Migration
             $table->json('data')->nullable();
             $table->timestamps();
         });
-        
-        Schema::table('luketowers_easydonors_donors', function($table)
-        {
-	        // References RainLab\User
-	        $table->foreign('user_id')
-	        	->references('id')
-	        	->on('users');
-        });
     }
-    
+
     public function down()
     {
         Schema::dropIfExists('luketowers_easydonors_donors');
