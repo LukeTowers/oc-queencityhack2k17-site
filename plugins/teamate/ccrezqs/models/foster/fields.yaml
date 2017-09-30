@@ -1,74 +1,86 @@
 fields:
-    name:
-        label: Name
-        oc.commentPosition: ''
-        span: auto
-        type: text
-    surname:
-        label: Surname
-        oc.commentPosition: ''
-        span: auto
-        type: text
-    email:
-        label: 'Email Address'
-        oc.commentPosition: ''
-        span: auto
-        type: text
-    status:
+    foster_status:
         label: Status
-        oc.commentPosition: ''
-        span: auto
-        type: text
-    section1:
-        label: 'Contact Information'
-        span: full
-        type: section
-    'contact_info[phone]':
-        label: Phone
-        oc.commentPosition: ''
-        span: auto
-        type: text
-    'contact_info[address][street_address]':
-        label: 'Street Address'
-        oc.commentPosition: ''
-        span: auto
-        type: text
-    'contact_info[address][city]':
-        label: City
-        oc.commentPosition: ''
-        span: auto
-        type: text
-    'contact_info[address][province]':
-        label: Province
-        oc.commentPosition: ''
+        span: left
+        type: dropdown
         options:
-            AB: AB
-            BC: BC
-            MB: MB
-            NB: NB
-            NL: NL
-            NS: NS
-            NT: NT
-            NU: NU
-            'ON': 'ON'
-            PE: PE
-            QC: QC
-            SK: SK
-            YT: YT
+            inactive: Inactive
+            active: Active
+        tab: rainlab.user::lang.user.account
+
+    block_mail:
+        label: rainlab.user::lang.user.block_mail
+        tab: rainlab.user::lang.user.account
+        type: checkbox
+        span: right
+        cssClass: field-align-above
+        context: update
+
+    _contact_info:
+        label: Contact Information
+        span: full
+        tab: Contact
+        type: section
+
+    email:
+        label: rainlab.user::lang.user.email
+        tab: Contact
+        span: left
+
+    contact_info[phone]:
+        label: Phone
+        span: right
+        type: text
+        tab: Contact
+
+    contact_info[address][street_address]:
+        label: Street Address
+        span: auto
+        type: text
+        tab: Contact
+
+    contact_info[address][city]:
+        label: City
+        span: auto
+        type: text
+        tab: Contact
+
+    contact_info[address][province]:
+        label: Province
+        options:
+            AB: Alberta
+            BC: British Columbia
+            MB: Manitoba
+            NB: New Brunswick
+            NL: Newfoundland
+            NS: Nova Scotia
+            NT: Northwest Territories
+            NU: Nunavut
+            ON: Ontario
+            PE: Prince Edward Island
+            QC: Quebec
+            SK: Saskatchewan
+            YT: Yukon
+        default: SK
         span: auto
         type: dropdown
-    'contact_info[address][postalcode]':
-        label: 'Postal Code'
-        oc.commentPosition: ''
+        tab: Contact
+
+    contact_info[address][postalcode]:
+        label: Postal Code
         span: auto
         type: text
-    section2:
-        label: 'Residence Information'
+        tab: Contact
+
+
+    _residence_info:
+        label: Residence Information
         span: full
         type: section
-    'residence[type]':
+        tab: Residence
+
+    residence[type]:
         label: Type
-        oc.commentPosition: ''
         options:
             House: House
             Apartment: Apartment
@@ -77,187 +89,222 @@ fields:
             Other: Other
         span: auto
         type: dropdown
-    'residence[residence_explanation]':
-        label: 'If other, please explain'
-        size: ''
-        oc.commentPosition: ''
+        tab: Residence
+
+    residence[residence_explanation]:
+        label: If other, please explain
         span: auto
         type: textarea
-    'residence[rent]':
-        label: 'Do you rent or own your residence'
-        oc.commentPosition: ''
+        tab: Residence
+
+    residence[rent]:
+        label: Do you rent or own your residence?
         options:
-            Rent: Rent
-            Own: Own
+            rent: Rent
+            own: Own
         span: auto
         type: dropdown
-    'residence[rent_landlord_animals]':
-        label: 'If you rent, does your landlord permit animals?'
-        oc.commentPosition: ''
+        tab: Residence
+
+    residence[rent_landlord_animals]:
+        label: If you rent, does your landlord permit animals?
         span: auto
         type: text
-    'residence[landlord_contact]':
-        label: 'Please list the name and contact information for your landlord'
-        oc.commentPosition: ''
+        tab: Residence
+
+    residence[landlord_contact]:
+        label: Please list the name and contact information for your landlord
         span: auto
         type: text
-    'residence[yard_fenced]':
-        label: 'Is your yard fully fenced?'
-        oc.commentPosition: ''
+        tab: Residence
+
+    residence[yard_fenced]:
+        label: Is your yard fully fenced?
         options:
-            'Yes': 'Yes'
-            'No': 'No'
+            yes: Yes
+            no: No
         span: auto
+        tab: Residence
         type: radio
-    section3:
-        label: 'Personal Information'
+
+    _personal_info:
+        label: Personal Information
         span: full
         type: section
-    'personal_info[date_of_birth]':
-        label: 'Date of birth'
-        oc.commentPosition: ''
+        tab: Personal Info
+
+    personal_info[date_of_birth]:
+        label: Date of birth
         mode: date
         span: auto
         type: datepicker
-    'personal_info[occupation]':
+        tab: Personal Info
+
+    personal_info[occupation]:
         label: Occupation
-        oc.commentPosition: ''
         span: auto
         type: text
-    'personal_info[family_busyness]':
-        label: 'How busy is your family schedule?'
-        oc.commentPosition: ''
+        tab: Personal Info
+
+    personal_info[family_busyness]:
+        label: How busy is your family schedule?
         options:
-            'Very Busy': 'Very Busy'
-            Busy: Busy
-            'Not Busy': 'Not Busy'
+            very_busy: Very Busy
+            busy: Busy
+            not_busy: Not Busy
         span: auto
         type: dropdown
-    'personal_info[allergies]':
-        label: 'Are there allergies in the household?'
-        oc.commentPosition: ''
+        tab: Personal Info
+
+    personal_info[allergies]:
+        label: Are there allergies in the household?
         options:
-            'Yes': 'Yes'
-            'No': 'No'
-            Unknown: Unknown
+            yes: Yes
+            no: No
+            unknown: Unknown
         span: auto
         type: radio
-    'personal_info[primary_secondary_caregivers]':
-        label: 'Who will be the primary and secondary caregivers? What is the relation of the secondary caregiver to you?'
-        size: ''
-        oc.commentPosition: ''
+        tab: Personal Info
+
+    personal_info[primary_secondary_caregivers]:
+        label: Who will be the primary and secondary caregivers? What is the relation of the secondary caregiver to you?
         span: auto
         type: textarea
-    section4:
-        label: 'Animal Information'
+        tab: Personal Info
+
+
+    _animal_info:
+        label: Animal Information
         span: full
         type: section
-    'animal_info[owned_dogs_before]':
-        label: 'Have you owned dogs before?'
-        oc.commentPosition: ''
+        tab: Animal Info
+
+    animal_info[owned_dogs_before]:
+        label: Have you owned dogs before?
         options:
-            'Yes': 'Yes'
-            'No': 'No'
+            yes: Yes
+            no: No
         span: auto
         type: radio
-    'animal_info[previous_dogs_size]':
-        label: 'Were they small, medium, or large dogs?'
-        oc.commentPosition: ''
+        tab: Animal Info
+
+    animal_info[previous_dogs_size]:
+        label: Were they small, medium, or large dogs?
         options:
             small: Small
             medium: Medium
             large: Large
         span: auto
         type: checkboxlist
-    'animal_info[current_pets_info]':
-        label: 'Current Pets Information'
-        size: ''
-        oc.commentPosition: ''
+        tab: Animal Info
+
+    animal_info[current_pets_info]:
+        label: Current Pets Information
         span: auto
         type: textarea
-    'animal_info[current_pets_neutered]':
-        label: 'Current Pets Neutered'
-        size: ''
-        oc.commentPosition: ''
+        tab: Animal Info
+
+    animal_info[current_pets_neutered]:
+        label: Current Pets Neutered
         span: auto
         type: textarea
-    'animal_info[current_pets_vaccinated]':
-        label: 'Current Pets Vaccinated'
-        size: ''
-        oc.commentPosition: ''
+        tab: Animal Info
+
+    animal_info[current_pets_vaccinated]:
+        label: Current Pets Vaccinated
         span: auto
         type: textarea
-    'animal_info[dog_during_day]':
-        label: 'Where will the dog stay during the day?'
-        oc.commentPosition: ''
+        tab: Animal Info
+
+    animal_info[dog_during_day]:
+        label: Where will the dog stay during the day?
         options:
-            'Loose in the house': 'Loose in the house'
-            'Traded inside': 'Traded inside'
-            'Dog Run': 'Dog Run'
-            'Fenced yard': 'Fenced yard'
-            Other: Other
+            loose_in_house: Loose in the house
+            trained_inside: Trained inside
+            dog_run: Dog Run
+            fenced_yard: Fenced yard
+            other: Other
         span: auto
         type: dropdown
-    'animal_info[dog_by_self]':
-        label: 'How many hours a day will the dog be on its own? Please give answers for both work days and non-work days'
-        size: ''
-        oc.commentPosition: ''
+        tab: Animal Info
+
+    animal_info[dog_by_self]:
+        label: How many hours a day will the dog be on its own? Please give answers for both work days and non-work days
         span: auto
         type: textarea
-    'animal_info[dog_check]':
-        label: 'If the dog is alone for more than 4 hours at a time, will you have someone available to periodically visit the dog?'
-        oc.commentPosition: ''
+        tab: Animal Info
+
+    animal_info[dog_check]:
+        label: If the dog is alone for more than 4 hours at a time, will you have someone available to periodically visit the dog?
         options:
-            'Yes': 'Yes'
-            'No': 'No'
+            yes: Yes
+            no: No
         span: auto
         type: radio
-    section5:
-        label: 'Foster Information'
+        tab: Animal Info
+
+
+    _foster_info:
+        label: Foster Information
         span: full
         type: section
-    'foster_info[fostered_before]':
-        label: 'Have you ever fostered before?'
-        oc.commentPosition: ''
+        tab: Foster Info
+
+    foster_info[fostered_before]:
+        label: Have you ever fostered before?
         options:
-            'Yes': 'Yes'
-            'No': 'No'
+            yes: Yes
+            no: No
         span: auto
         type: radio
-    'foster_info[fostering_experience]':
-        label: 'Foster Experience'
-        size: ''
-        oc.commentPosition: ''
+        tab: Foster Info
+
+    foster_info[fostering_experience]:
+        label: Foster Experience
         span: auto
         type: textarea
-    'foster_info[age_preference]':
-        label: 'Age Preference'
-        oc.commentPosition: ''
+        tab: Foster Info
+
+    foster_info[age_preference]:
+        label: Age Preference
         options:
-            'Very Young puppy (under 8 weeks)': 'Very Young puppy (under 8 weeks)'
-            'Young Puppy (8 weeks to 4 months)': 'Young Puppy (8 weeks to 4 months)'
-            'Older Puppy (4 months to a year)': 'Older Puppy (4 months to a year)'
-            'Adult dog (over a year)': 'Adult dog (over a year)'
+            very_young_puppy: Very Young puppy (under 8 weeks)
+            young_puppy: Young Puppy (8 weeks to 4 months)
+            older_puppy: Older Puppy (4 months to a year)
+            adult_dog: Adult dog (over a year)
         span: auto
         type: checkboxlist
-    'foster_info[unknown_fostering]':
-        label: 'Are you prepared to foster a dog of unknown age, breed, size, gender, etc? What would be some situations you would be unable to, or feel uneasy about fostering?'
-        size: ''
-        oc.commentPosition: ''
+        tab: Foster Info
+
+    foster_info[unknown_fostering]:
+        label: Are you prepared to foster a dog of unknown age, breed, size, gender, etc? What would be some situations you would be unable to, or feel uneasy about fostering?
         span: auto
         type: textarea
-    section6:
-        label: 'Other Information'
+        tab: Foster Info
+
+
+    _other_info:
+        label: Other Information
         span: full
         type: section
-    'other_info[referral_source]':
-        label: 'Referral Source'
-        oc.commentPosition: ''
-        span: auto
+        tab: Other
+
+    other_info[referral_source]:
+        label: Where did you hear about CC RezQs
         type: text
-    'other_info[extra]':
-        label: 'Anything else you would like to tell us? (Scheduled vacations, times you''re unavailable, when you''re available to start fostering, interest in taking a litter, etc.)'
+        tab: Other
+
+    other_info[extra]:
+        label: Anything else you would like to tell us? (Scheduled vacations, times youre unavailable, when you are available to start fostering, interest in taking a litter, etc.)
         span: auto
-        size: ''
-        oc.commentPosition: ''
         type: textarea
+        tab: Other
+
+    notes:
+        label: Notes
+        type: partial
+        context:
+        - update
+        - preview
+        path: $/teamate/ccrezqs/models/note/field.relation.htm
+        tab: Notes

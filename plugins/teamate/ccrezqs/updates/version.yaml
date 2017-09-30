@@ -4,7 +4,7 @@
     - 'Created table teamate_ccrezqs_dogs'
     - builder_table_create_teamate_ccrezqs_dogs.php
 1.0.3:
-    - 'Created table teamate_ccrezqs_fosters'
+    - 'Added Foster columns to the users table'
     - builder_table_create_teamate_ccrezqs_fosters.php
 1.0.4:
     - 'Created table teamate_ccrezqs_notes'

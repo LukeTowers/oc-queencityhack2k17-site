@@ -1,4 +1,10 @@
 ==
+<?php
+    function onStart() {
+        $this['loggedIn'] = Auth::check();
+    }
+?>
+==
 <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
@@ -15,9 +21,28 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="{% if( this.page.id == 'app.account-auth-register') %}active {% endif %}">
-                        <a href="{{ 'app.account/auth-register'|page }}">Register</a>
+                    <li class="{% if( this.page.id == 'donate') %}active {% endif %}">
+                        <a href="{{ 'donate'|page }}">Donate</a>
                     </li>
+                    <li class="{% if( this.page.id == 'faq') %}active {% endif %}">
+                        <a href="{{ 'faq'|page }}">FAQs</a>
+                    </li>
+
+                    {% if loggedIn %}
+                        <li class="{% if( this.page.id == 'foster') %}active {% endif %}">
+                            <a href="{{ 'foster'|page }}">Foster</a>
+                        </li>
+                        <li class="{% if( this.page.id == 'app.account-auth-logout') %}active {% endif %}">
+                            <a href="{{ 'app.account/auth-logout'|page }}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="{% if( this.page.id == 'app.account-auth-login') %}active {% endif %}">
+                            <a href="{{ 'app.account/auth-login'|page }}">Login</a>
+                        </li>
+                        <li class="{% if( this.page.id == 'app.account-auth-register') %}active {% endif %}">
+                            <a href="{{ 'app.account/auth-register'|page }}">Register</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

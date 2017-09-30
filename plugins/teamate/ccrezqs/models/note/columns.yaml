@@ -6,5 +6,5 @@ columns:
         label: Contents
         type: text
     created_at:
-        label: 'Creted At'
+        label: 'Created At'
         type: datetime

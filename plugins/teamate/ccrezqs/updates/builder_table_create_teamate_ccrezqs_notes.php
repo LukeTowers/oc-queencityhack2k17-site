@@ -11,14 +11,14 @@ class BuilderTableCreateTeamateCcrezqsNotes extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
-            $table->integer('target_id')->unsigned();
-            $table->string('target_type');
-            $table->string('title');
+            $table->integer('target_id')->unsigned()->nullable();
+            $table->string('target_type')->nullable();
+            $table->string('title')->nullable();
             $table->text('contents');
-            $table->timestamp('created_at');
+            $table->timestamp('created_at')->nullable();
         });
     }
-    
+
     public function down()
     {
         Schema::dropIfExists('teamate_ccrezqs_notes');

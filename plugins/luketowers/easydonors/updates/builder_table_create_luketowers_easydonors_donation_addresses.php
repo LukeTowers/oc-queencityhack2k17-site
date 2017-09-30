@@ -21,15 +21,8 @@ class BuilderTableCreateLuketowersEasydonorsDonationAddresses extends Migration
             $table->json('data')->nullable();
             $table->timestamps();
         });
-        
-        Schema::table('luketowers_easydonors_donation_addresses', function($table)
-        {
-	        $table->foreign('donation_id')
-	        	->references('id')
-	        	->on('luketowers_easydonors_donations');
-        });
     }
-    
+
     public function down()
     {
         Schema::dropIfExists('luketowers_easydonors_donation_addresses');

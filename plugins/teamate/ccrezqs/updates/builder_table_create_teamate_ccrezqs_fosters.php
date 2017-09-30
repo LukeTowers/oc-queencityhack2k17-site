@@ -7,25 +7,31 @@ class BuilderTableCreateTeamateCcrezqsFosters extends Migration
 {
     public function up()
     {
-        Schema::create('teamate_ccrezqs_fosters', function($table)
+        Schema::table('users', function($table)
         {
-            $table->engine = 'InnoDB';
-            $table->increments('id')->unsigned();
-            $table->string('name');
-            $table->string('surname');
-            $table->string('email');
-            $table->string('status');
-            $table->text('contact_info');
-            $table->text('residence');
-            $table->text('personal_info');
-            $table->text('animal_info');
-            $table->text('foster_info');
-            $table->text('other_info');
+            $table->string('foster_status')->default('inactive');
+            $table->json('contact_info')->nullable();
+            $table->json('residence')->nullable();
+            $table->json('personal_info')->nullable();
+            $table->json('animal_info')->nullable();
+            $table->json('foster_info')->nullable();
+            $table->json('other_info')->nullable();
         });
     }
-    
+
     public function down()
     {
-        Schema::dropIfExists('teamate_ccrezqs_fosters');
+        if (Schema::hasColumn('users', 'foster_status')) {
+            Schema::table('users', function($table)
+            {
+                $table->dropColumn('foster_status');
+                $table->dropColumn('contact_info');
+                $table->dropColumn('residence');
+                $table->dropColumn('personal_info');
+                $table->dropColumn('animal_info');
+                $table->dropColumn('foster_info');
+                $table->dropColumn('other_info');
+            });
+        }
     }
 }
