@@ -94,7 +94,11 @@ notFoundMessage = "Record not found"
         <div> <b>Dose 3 Date:</b> {{record.medical_info.medications.dewormer.dose_3}}</div>
       </div>
       <div class="col-sm-6">
-        <div> <b>Fixed:</b> {{record.is_fixed}}</div>
+        <div> <b>Fixed:</b> {% if record.is_fixed == 1 %}
+    Yes
+    {% else %}
+    No
+{% endif %}</div>
         <h4 class="page-header">Additional Medications</h4>
         <div> <b>DA2PP 1:</b> {{record.medical_info.medications.da2pp_1}}</div>
         <div> <b>DA2PP 2:</b> {{record.medical_info.medications.da2pp_2}}</div>
