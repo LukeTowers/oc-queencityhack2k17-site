@@ -17,22 +17,30 @@ detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
 ==
 <?php
-function onRun() {
+    function onRun() {
         $this['user'] = Auth::getUser();
     }
 ?>
 ==
+<style type="text/css">
+    .extra-padding p {
+        font-size: 2em;
+    }
+    .extra-padding .p-target {
+        padding: 2em;
+    }
+</style>
 <div class="container">
     <div class="row">
-        <div class="well" style="padding-top: 3em;">
+        <div class="well extra-padding" style="padding-top: 3em;">
             {% if user.foster_status == 'registered' %}
-                <p><a href="{{ 'applications/foster' | page() }}">Fill out the Foster Application Form to get started</a></p>
+                <p><a class="p-target" style="background-color: #009687; color: #FFF !important; text-align: center; display: block;" href="{{ 'applications/foster' | page() }}">Get Started! (Foster Application Form)</a></p>
             {% elseif user.foster_status == 'applied' %}
                 <p>Your application has been received and is pending approval. Check back soon!</p>
             {% elseif user.foster_status == 'inactive' %}
                 <p>Your account is currently inactive</p>
             {% elseif user.foster_status == 'active' %}
-                <div class="row">
+                <div class="row" style="margin: 0;">
                     <h1 class="modal-title">Your dogs</h1>
                     {% for record in records %}
                         {% partial 'display-dog' dog=record %}

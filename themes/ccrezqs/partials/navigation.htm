@@ -1,6 +1,6 @@
 ==
 <?php
-    function onStart() {
+function onStart() {
         $this['loggedIn'] = Auth::check();
     }
 ?>
@@ -21,6 +21,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://thoroughlyreviewed.com/resources/the-complete-resource-guide-for-dog-owners/" rel="noopener" target="_blank">Training Library</a>
+                    </li>
                     <li class="{% if( this.page.id == 'donate') %}active {% endif %}">
                         <a href="{{ 'donate'|page }}">Donate</a>
                     </li>
