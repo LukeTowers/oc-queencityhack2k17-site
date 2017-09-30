@@ -246,8 +246,14 @@ tabs:
             span: right
             type: textarea
 
-        _notes@update:
+        notes@update:
             label: Notes
             type: partial
             path: $/teamate/ccrezqs/models/note/field.relation.htm
             tab: Notes
+
+        photos:
+            label: Photos
+            type: fileupload
+            mode: image
+            tab: Photos

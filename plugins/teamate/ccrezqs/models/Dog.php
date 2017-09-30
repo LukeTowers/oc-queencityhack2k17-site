@@ -26,4 +26,8 @@ class Dog extends Model
     public $morphMany = [
         'notes' => ['TeamAte\Ccrezqs\Models\Note', 'name' => 'target']
     ];
+
+    public $attachMany = [
+        'photos' => 'System\Models\File'
+    ];
 }
