@@ -2,8 +2,8 @@
     <div class="thumbnail">
         <img class="img-responsive" src="{{ dog.photos.first().getThumb('700','450')}}" alt="">
         <div class="caption">
-            <h3>{{ dog.name }}<br>
-                <small>{{ dog.gender }},{{ dog.size }},{{ dog.general_info.breed }}</small>
+            <h3 style="text-transform: capitalize;">{{ dog.name }}<br>
+                <small>{{ dog.size }}, {{ dog.gender }}, {{ dog.general_info.breed }}</small>
             </h3>
             <p>{{ dog.general_info.situation }}</p>
         </div>
