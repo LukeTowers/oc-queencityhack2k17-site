@@ -1,4 +1,18 @@
 columns:
-    id:
-        label: id
-        type: text
+    name:
+        label: Name
+
+    status:
+        label: Status
+
+    size:
+        label: Size
+
+    gender:
+        label: Gender
+
+    is_fixed:
+        label: Is Fixed
+
+    general_info[breed]:
+        label: Breed

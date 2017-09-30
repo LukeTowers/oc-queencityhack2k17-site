@@ -1,4 +1,4 @@
-name: Dogs
+name: Dog
 form: $/teamate/ccrezqs/models/dog/fields.yaml
 modelClass: TeamAte\Ccrezqs\Models\Dog
 defaultRedirect: teamate/ccrezqs/dogs

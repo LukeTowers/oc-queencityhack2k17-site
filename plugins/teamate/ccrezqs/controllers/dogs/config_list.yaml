@@ -1,7 +1,7 @@
 list: $/teamate/ccrezqs/models/dog/columns.yaml
 modelClass: TeamAte\Ccrezqs\Models\Dog
 title: Dogs
-noRecordsMessage: 'backend::lang.list.no_records'
+noRecordsMessage: There are no dogs in this view
 showSetup: true
 showCheckboxes: true
 toolbar:
