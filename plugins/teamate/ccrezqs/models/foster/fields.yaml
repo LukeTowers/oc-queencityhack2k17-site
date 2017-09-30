@@ -5,6 +5,7 @@ fields:
         type: dropdown
         options:
             inactive: Inactive
+            applied: Applied
             active: Active
         tab: rainlab.user::lang.user.account
 
@@ -82,11 +83,11 @@ fields:
     residence[type]:
         label: Type
         options:
-            House: House
-            Apartment: Apartment
-            Condo: Condo
-            Farm: Farm
-            Other: Other
+            house: House
+            apartment: Apartment
+            condo: Condo
+            farm: Farm
+            other: Other
         span: auto
         type: dropdown
         tab: Residence
@@ -184,6 +185,7 @@ fields:
         options:
             yes: Yes
             no: No
+            lived_with_dogs: Lived with dogs
         span: auto
         type: radio
         tab: Animal Info
@@ -259,12 +261,6 @@ fields:
         type: radio
         tab: Foster Info
 
-    foster_info[fostering_experience]:
-        label: Foster Experience
-        span: auto
-        type: textarea
-        tab: Foster Info
-
     foster_info[age_preference]:
         label: Age Preference
         options:
@@ -276,9 +272,21 @@ fields:
         type: checkboxlist
         tab: Foster Info
 
+    foster_info[daily_exercising]:
+        label: How much time will you have daily for exercising the dog?
+        span: full
+        type: text
+        tab: Foster Info
+
+    foster_info[fostering_experience]:
+        label: Foster Experience
+        span: left
+        type: textarea
+        tab: Foster Info
+
     foster_info[unknown_fostering]:
         label: Are you prepared to foster a dog of unknown age, breed, size, gender, etc? What would be some situations you would be unable to, or feel uneasy about fostering?
-        span: auto
+        span: right
         type: textarea
         tab: Foster Info
 
