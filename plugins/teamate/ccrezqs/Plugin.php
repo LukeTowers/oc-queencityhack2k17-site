@@ -49,6 +49,7 @@ class Plugin extends PluginBase
     {
         return [
             'TeamAte\Ccrezqs\Components\ApplicationFoster' => 'applicationFoster',
+            'TeamAte\Ccrezqs\Components\PetsListing'  => 'petsList'
         ];
     }
 }
