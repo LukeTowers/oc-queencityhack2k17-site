@@ -9,3 +9,7 @@ navigation:
         label: Dogs
         url: teamate/ccrezqs/dogs
         icon: icon-life-ring
+    main-menu-item:
+        label: Foster
+        url: teamate/ccrezqs/fosters
+        icon: icon-life-ring

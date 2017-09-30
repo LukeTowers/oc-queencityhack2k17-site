@@ -1,0 +1,263 @@
+fields:
+    name:
+        label: Name
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    surname:
+        label: Surname
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    email:
+        label: 'Email Address'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    status:
+        label: Status
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    section1:
+        label: 'Contact Information'
+        span: full
+        type: section
+    'contact_info[phone]':
+        label: Phone
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    'contact_info[address][street_address]':
+        label: 'Street Address'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    'contact_info[address][city]':
+        label: City
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    'contact_info[address][province]':
+        label: Province
+        oc.commentPosition: ''
+        options:
+            AB: AB
+            BC: BC
+            MB: MB
+            NB: NB
+            NL: NL
+            NS: NS
+            NT: NT
+            NU: NU
+            'ON': 'ON'
+            PE: PE
+            QC: QC
+            SK: SK
+            YT: YT
+        span: auto
+        type: dropdown
+    'contact_info[address][postalcode]':
+        label: 'Postal Code'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    section2:
+        label: 'Residence Information'
+        span: full
+        type: section
+    'residence[type]':
+        label: Type
+        oc.commentPosition: ''
+        options:
+            House: House
+            Apartment: Apartment
+            Condo: Condo
+            Farm: Farm
+            Other: Other
+        span: auto
+        type: dropdown
+    'residence[residence_explanation]':
+        label: 'If other, please explain'
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    'residence[rent]':
+        label: 'Do you rent or own your residence'
+        oc.commentPosition: ''
+        options:
+            Rent: Rent
+            Own: Own
+        span: auto
+        type: dropdown
+    'residence[rent_landlord_animals]':
+        label: 'If you rent, does your landlord permit animals?'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    'residence[landlord_contact]':
+        label: 'Please list the name and contact information for your landlord'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    'residence[yard_fenced]':
+        label: 'Is your yard fully fenced?'
+        oc.commentPosition: ''
+        options:
+            'Yes': 'Yes'
+            'No': 'No'
+        span: auto
+        type: radio
+    section3:
+        label: 'Personal Information'
+        span: full
+        type: section
+    'personal_info[date_of_birth]':
+        label: 'Date of birth'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    'personal_info[occupation]':
+        label: Occupation
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    'personal_info[family_busyness]':
+        label: 'How busy is your family schedule?'
+        oc.commentPosition: ''
+        options:
+            'Very Busy': 'Very Busy'
+            Busy: Busy
+            'Not Busy': 'Not Busy'
+        span: auto
+        type: dropdown
+    'personal_info[allergies]':
+        label: 'Are there allergies in the household?'
+        oc.commentPosition: ''
+        options:
+            'Yes': 'Yes'
+            'No': 'No'
+            Unknown: Unknown
+        span: auto
+        type: radio
+    'personal_info[primary_secondary_caregivers]':
+        label: 'Who will be the primary and secondary caregivers? What is the relation of the secondary caregiver to you?'
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    section4:
+        label: 'Animal Information'
+        span: full
+        type: section
+    'animal_info[owned_dogs_before]':
+        label: 'Have you owned dogs before?'
+        oc.commentPosition: ''
+        options:
+            'Yes': 'Yes'
+            'No': 'No'
+        span: auto
+        type: radio
+    'animal_info[previous_dogs_size]':
+        label: 'Were they small, medium, or large dogs?'
+        oc.commentPosition: ''
+        options:
+            small: Small
+            medium: Medium
+            large: Large
+        span: auto
+        type: checkboxlist
+    'animal_info[current_pets_info]':
+        label: 'Current Pets Information'
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    'animal_info[current_pets_neutered]':
+        label: 'Current Pets Neutered'
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    'animal_info[current_pets_vaccinated]':
+        label: 'Current Pets Vaccinated'
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    'animal_info[dog_during_day]':
+        label: 'Where will the dog stay during the day?'
+        oc.commentPosition: ''
+        options:
+            'Loose in the house': 'Loose in the house'
+            'Traded inside': 'Traded inside'
+            'Dog Run': 'Dog Run'
+            'Fenced yard': 'Fenced yard'
+            Other: Other
+        span: auto
+        type: dropdown
+    'animal_info[dog_by_self]':
+        label: 'How many hours a day will the dog be on its own? Please give answers for both work days and non-work days'
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    'animal_info[dog_check]':
+        label: 'If the dog is alone for more than 4 hours at a time, will you have someone available to periodically visit the dog?'
+        oc.commentPosition: ''
+        options:
+            'Yes': 'Yes'
+            'No': 'No'
+        span: auto
+        type: radio
+    section5:
+        label: 'Foster Information'
+        span: full
+        type: section
+    'foster_info[fostered_before]':
+        label: 'Have you ever fostered before?'
+        oc.commentPosition: ''
+        options:
+            'Yes': 'Yes'
+            'No': 'No'
+        span: auto
+        type: radio
+    'foster_info[fostering_experience]':
+        label: 'Foster Experience'
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    'foster_info[age_preference]':
+        label: 'Age Preference'
+        oc.commentPosition: ''
+        options:
+            'Very Young puppy (under 8 weeks)': 'Very Young puppy (under 8 weeks)'
+            'Young Puppy (8 weeks to 4 months)': 'Young Puppy (8 weeks to 4 months)'
+            'Older Puppy (4 months to a year)': 'Older Puppy (4 months to a year)'
+            'Adult dog (over a year)': 'Adult dog (over a year)'
+        span: auto
+        type: checkboxlist
+    'foster_info[unknown_fostering]':
+        label: 'Are you prepared to foster a dog of unknown age, breed, size, gender, etc? What would be some situations you would be unable to, or feel uneasy about fostering?'
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    section6:
+        label: 'Other Information'
+        span: full
+        type: section
+    'other_info[referral_source]':
+        label: 'Referral Source'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    'other_info[extra]':
+        label: 'Anything else you would like to tell us? (Scheduled vacations, times you''re unavailable, when you''re available to start fostering, interest in taking a litter, etc.)'
+        span: auto
+        size: ''
+        oc.commentPosition: ''
+        type: textarea

@@ -1,0 +1,11 @@
+title: Fosters
+modelClass: TeamAte\Ccrezqs\Models\Foster
+list: $/teamate/ccrezqs/models/foster/columns.yaml
+recordUrl: 'teamate/ccrezqs/fosters/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

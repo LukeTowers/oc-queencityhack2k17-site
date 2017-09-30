@@ -1,0 +1,10 @@
+name: Fosters
+form: $/teamate/ccrezqs/models/foster/fields.yaml
+modelClass: TeamAte\Ccrezqs\Models\Foster
+defaultRedirect: teamate/ccrezqs/fosters
+create:
+    redirect: 'teamate/ccrezqs/fosters/update/:id'
+    redirectClose: teamate/ccrezqs/fosters
+update:
+    redirect: teamate/ccrezqs/fosters
+    redirectClose: teamate/ccrezqs/fosters
