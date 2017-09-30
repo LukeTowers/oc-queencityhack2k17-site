@@ -1,0 +1,9 @@
+dogs:
+    label: Dog
+    view:
+        list: $/teamate/ccrezqs/models/dog/columns.yaml
+        toolbarButtons: link|unlink
+    manage:
+        form: $/teamate/ccrezqs/models/dog/fields.yaml
+        recordsPerPage: 10
+        readOnly: true

@@ -16,16 +16,28 @@ class Plugin extends PluginBase
         UserModel::extend(function ($model) {
             // Setup Relationships
             $model->morphMany = ['notes' => ['TeamAte\Ccrezqs\Models\Note', 'name' => 'target']];
-            $model->hasMany['dogs'] = 'TeamAte\CcRezqs\Models\Dog';
+            $model->hasMany['dogs'] = [
+                'TeamAte\CcRezqs\Models\Dog',
+                'key' => 'foster_id',
+            ];
 
             $model->jsonable(['contact_info', 'residence', 'personal_info', 'animal_info', 'foster_info', 'other_info']);
 
             $model->addFillable(['contact_info', 'residence', 'personal_info', 'animal_info', 'foster_info', 'other_info']);
+
+            $model->addDynamicMethod('scopeActive', function ($query) {
+                return $query->where('foster_status', 'active');
+            });
+
         });
 
         UserController::extend(function ($controller) {
             $controller->addDynamicProperty('relationConfig', '$/teamate/ccrezqs/controllers/dogs/config_relation.yaml');
-            $controller->relationConfig = '$/teamate/ccrezqs/controllers/dogs/config_relation.yaml';
+
+            $controller->relationConfig = $controller->mergeConfig(
+                '$/teamate/ccrezqs/controllers/dogs/config_relation.yaml',
+                '$/teamate/ccrezqs/controllers/fosters/config_relation.yaml'
+            );
 
             $controller->implement[] = 'Backend.Behaviors.RelationController';
         });

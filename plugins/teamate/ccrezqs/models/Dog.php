@@ -22,6 +22,9 @@ class Dog extends Model
      */
     public $table = 'teamate_ccrezqs_dogs';
 
+    public $belongsTo = [
+        'foster' => ['RainLab\User\Models\User'],
+    ];
 
     public $morphMany = [
         'notes' => ['TeamAte\Ccrezqs\Models\Note', 'name' => 'target']

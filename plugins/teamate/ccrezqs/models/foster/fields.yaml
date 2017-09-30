@@ -6,7 +6,7 @@ fields:
         options:
             inactive: Inactive
             applied: Applied
-            active: Active
+            active: Approved
         tab: rainlab.user::lang.user.account
 
     block_mail:
@@ -310,3 +310,12 @@ fields:
         - preview
         path: $/teamate/ccrezqs/models/note/field.relation.htm
         tab: Notes
+
+    dogs:
+        label: Dogs
+        type: partial
+        context:
+        - update
+        - preview
+        path: $/teamate/ccrezqs/models/dog/field.relation.htm
+        tab: Dogs
