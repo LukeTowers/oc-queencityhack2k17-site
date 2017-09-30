@@ -6,3 +6,6 @@
 1.0.3:
     - 'Created table teamate_ccrezqs_fosters'
     - builder_table_create_teamate_ccrezqs_fosters.php
+1.0.4:
+    - 'Created table teamate_ccrezqs_notes'
+    - builder_table_create_teamate_ccrezqs_notes.php

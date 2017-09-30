@@ -5,7 +5,7 @@ use Model;
 /**
  * Model
  */
-class Foster extends Model
+class Note extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
@@ -24,9 +24,9 @@ class Foster extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'teamate_ccrezqs_fosters';
+    public $table = 'teamate_ccrezqs_notes';
 
-    public $morphMany = [
-        'notes' => ['TeamAte\Ccrezqs\Models\Note', 'name' => 'target']
+    public $morphTo = [
+        'target' => []
     ];
 }

@@ -245,3 +245,9 @@ tabs:
             tab: Bio
             span: right
             type: textarea
+
+        _notes@update:
+            label: Notes
+            type: partial
+            path: $/teamate/ccrezqs/models/note/field.relation.htm
+            tab: Notes

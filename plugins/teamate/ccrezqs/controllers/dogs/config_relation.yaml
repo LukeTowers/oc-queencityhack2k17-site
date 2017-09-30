@@ -1,0 +1,8 @@
+notes:
+    label: Notes
+    view:
+        list: $/teamate/ccrezqs/models/note/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/teamate/ccrezqs/models/note/fields.yaml
+        recordsPerPage: 10

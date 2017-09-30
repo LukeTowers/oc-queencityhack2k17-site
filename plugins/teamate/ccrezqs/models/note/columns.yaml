@@ -1,0 +1,10 @@
+columns:
+    title:
+        label: Title
+        type: text
+    contents:
+        label: Contents
+        type: text
+    created_at:
+        label: 'Creted At'
+        type: datetime

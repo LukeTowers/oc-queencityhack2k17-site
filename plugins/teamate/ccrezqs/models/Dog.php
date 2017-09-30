@@ -21,4 +21,9 @@ class Dog extends Model
      * @var string The database table used by the model.
      */
     public $table = 'teamate_ccrezqs_dogs';
+
+
+    public $morphMany = [
+        'notes' => ['TeamAte\Ccrezqs\Models\Note', 'name' => 'target']
+    ];
 }
