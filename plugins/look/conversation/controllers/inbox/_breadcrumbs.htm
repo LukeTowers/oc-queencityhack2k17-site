@@ -1,0 +1,12 @@
+<?php Block::put('breadcrumb') ?>
+
+    <ul>
+        <li>
+            <a href="<?= Backend::url('look/conversation/inbox') ?>">
+                <?= e(trans('look.conversation::lang.navigation.inbox')) ?>
+            </a>
+        </li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+
+<?php Block::endPut() ?>

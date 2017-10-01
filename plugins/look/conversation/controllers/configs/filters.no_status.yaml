@@ -1,0 +1,15 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    hasAttachments:
+        label: look.conversation::lang.controllers.general.filters.has_attachments
+        type: checkbox
+        scope: hasAttachments
+        
+    noAttachments:
+        label: look.conversation::lang.controllers.general.filters.no_attachments
+        type: checkbox
+        scope: noAttachments

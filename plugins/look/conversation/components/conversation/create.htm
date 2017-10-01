@@ -1,0 +1,31 @@
+{{ form_open() }}
+
+	{% set fields = [
+		{
+			'label'   : 'To',
+			'value'   : __SELF__.getClientRecipient().full_name,
+			'preview' : true,
+		},
+		{
+			'label'   : 'Subject',
+			'name'    : 'subject',
+		},
+		{
+			'type'    : 'richeditor',
+			'label'   : 'Message',
+			'name'    : 'body',
+		},
+		{
+			'type'    : 'fileupload',
+			'label'   : 'Attachments',
+			'name'    : 'createAttachments',
+		}
+	] %}
+	
+	{% partial '@fields.render.htm' fields=fields %}
+	
+	{% partial '@buttons/send' %}
+	
+	{% partial '@buttons/save' %}
+	
+{{ form_close() }}

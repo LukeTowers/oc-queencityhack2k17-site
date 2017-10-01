@@ -1,0 +1,32 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: $/look/conversation/models/message/columns.yaml
+
+# Model Class name
+modelClass: Look\Conversation\Models\Message
+
+# Link URL for each record
+recordUrl: look/conversation/inbox/preview/:id
+
+# Message to display if the list is empty
+noRecordsMessage: look.conversation::lang.controllers.general.messages.no_siblings
+
+# Records to display per page
+recordsPerPage: 20
+
+# Displays the list column set up button
+showSetup: false
+
+# Displays the sorting link on each column
+showSorting: true
+
+# Display checkboxes next to each record
+showCheckboxes: false
+
+# Default sorting column
+defaultSort:
+    column: created_at
+    direction: desc

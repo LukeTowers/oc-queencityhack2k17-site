@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Template
+
+# Model Form Field configuration
+form: $/look/conversation/models/template/fields.yaml
+
+# Model Class name
+modelClass: Look\Conversation\Models\Template
+
+# Default redirect location
+defaultRedirect: look/conversation/templates
+
+# Create page
+create:
+    title: Create Template
+    redirect: look/conversation/templates/update/:id
+    redirectClose: look/conversation/templates
+
+# Update page
+update:
+    title: Edit Template
+    redirect: look/conversation/templates
+    redirectClose: look/conversation/templates
+
+# Preview page
+preview:
+    title: Preview Template

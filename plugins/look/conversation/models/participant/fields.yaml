@@ -1,0 +1,14 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    client:
+        label: look.casefiles::lang.models.user.label
+        title: look.conversation::lang.controllers.general.buttons.select_client
+        prompt: look.conversation::lang.controllers.general.messages.pick_recipient
+        type: recordfinder
+        list: $/look/conversation/models/participant/columns.yaml
+        scope: currentStaffCanInteractWith
+        nameFrom: fullName

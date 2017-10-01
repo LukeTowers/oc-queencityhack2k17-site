@@ -1,0 +1,17 @@
+# ===================================
+#  Settings Field Definitions
+# ===================================
+
+fields:
+
+    default_client_recipient:
+        label: 'look.conversation::lang.settings.default_client_recipient.label'
+        comment: 'look.conversation::lang.settings.default_client_recipient.comment'
+        type: dropdown
+        default: 1
+        
+    system_messages_from:
+        label: 'look.conversation::lang.settings.system_messages_from.label'
+        comment: 'look.conversation::lang.settings.system_messages_from.comment'
+        type: dropdown
+        default: 1

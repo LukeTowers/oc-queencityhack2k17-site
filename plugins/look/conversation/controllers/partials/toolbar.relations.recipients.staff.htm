@@ -1,0 +1,26 @@
+<?php if ($formContext !== 'preview') : ?>
+
+    <div data-control="toolbar" data-disposable="">
+
+        <a data-control="popup"
+           data-size="huge"
+           data-handler="onRelationButtonAdd"
+           href="javascript:;"
+           class="btn btn-sm btn-primary oc-icon-plus"
+           data-disposable="">
+            <?= e(trans('look.conversation::lang.controllers.general.buttons.select_staff')) ?>
+        </a>
+
+        <button class="btn btn-sm btn-danger oc-icon-minus control-disabled"
+                onclick="$(this).data('request-data', { checked: $('#<?= class_basename($this) ?>-<?= $formContext ?>-RelationController-staff_recipients .control-list').listWidget('getChecked') })"
+                disabled=""
+                data-request="onRelationButtonRemove"
+                data-trigger-action="enable"
+                data-trigger="#<?= class_basename($this) ?>-<?= $formContext ?>-RelationController-staff_recipients .control-list input[type=checkbox]"
+                data-trigger-condition="checked"
+                data-stripe-load-indicator="">
+            <?= e(trans('look.conversation::lang.controllers.general.buttons.remove_selected')) ?>
+        </button>
+    </div>
+
+<?php endif; ?>

@@ -1,0 +1,15 @@
+fields:
+    name:
+        label: look.conversation::lang.models.template.name
+        span: full
+        type: text
+    subject:
+        label: look.conversation::lang.models.message.subject
+        span: full
+        type: text
+    body:
+        label: look.conversation::lang.models.message.body
+        type: richeditor
+        size: giant
+        span: full
+        toolbarButtons: fullscreen|paragraphFormat|bold|italic|underline|strikeThrough|||color|emoticons||||align|formatOL|formatUL|quote|insertHR|insertLink|insertImage|insertTable|undo|redo|clearFormatting|html

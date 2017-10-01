@@ -1,0 +1,12 @@
+<button class="btn btn-warning oc-icon-archive"
+        disabled="disabled"
+        onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
+        data-request="onArchive"
+        data-request-confirm="<?= e(trans('look.conversation::lang.controllers.general.messages.archive_selected_confirm')) ?>"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$el.prop('disabled', false)"
+        data-stripe-load-indicator>
+    <?= e(trans('look.conversation::lang.controllers.general.buttons.archive_selected')) ?>
+</button>

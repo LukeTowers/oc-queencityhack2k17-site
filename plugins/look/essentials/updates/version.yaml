@@ -1,0 +1,4 @@
+1.0.1: 'First version of Essentials'
+1.0.2:
+    - 'Created table look_essentials_featured_images'
+    - builder_table_create_look_essentials_featured_images.php

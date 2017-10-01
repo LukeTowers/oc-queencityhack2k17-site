@@ -1,0 +1,19 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: look.conversation::lang.models.message.label
+
+# Model Form Field configuration
+form: $/look/conversation/models/message/fields.yaml
+
+# Model Class name
+modelClass: Look\Conversation\Models\Message
+
+# Default redirect location
+defaultRedirect: look/conversation/outbox
+
+# Preview page
+preview:
+    title: look.conversation::lang.controllers.general.contexts.preview

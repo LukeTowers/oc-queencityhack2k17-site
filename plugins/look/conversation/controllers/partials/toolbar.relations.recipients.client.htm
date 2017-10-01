@@ -1,0 +1,22 @@
+<?php if ($formContext !== 'preview') : ?>
+
+    <div data-control="toolbar" data-disposable="">
+
+        <a data-control="popup"
+           data-size="huge"
+           data-handler="onRelationButtonCreate"
+           href="javascript:;"
+           class="btn btn-sm btn-primary oc-icon-plus"
+           data-disposable="">
+            <?= e(trans('look.conversation::lang.controllers.general.buttons.select_client')) ?>
+        </a>
+        
+        <button
+	        class="btn btn-sm btn-secondary oc-icon-minus"
+	        data-request="onRelationButtonDelete"
+	        data-stripe-load-indicator>
+	        <?= e(trans('look.conversation::lang.controllers.general.buttons.remove_client')) ?>
+	    </button>
+    </div>
+
+<?php endif; ?>

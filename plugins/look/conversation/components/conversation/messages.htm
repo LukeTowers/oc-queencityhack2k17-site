@@ -1,0 +1,75 @@
+{% set context = __SELF__.context %}
+{% set popup = popup | default(false) %}
+{% import _self as ownMacro %}
+
+{% macro generateMessageClass(message, pageMessage) %}
+	message-row
+	{% if message.isUnread() or
+		(pageMessage and pageMessage.id == message.id)
+	%}
+		unread
+	{% endif %}
+{% endmacro %}
+
+{% macro generateMessageLink(message, component, popup = false) %}
+	{% if popup %}
+		data-message-id="{{ message.id }}"
+	{% else %}
+		data-href="{{ component.makeMessageUrl(message) | preg_replace('/\\s+/', ' ') | trim }}"
+	{% endif %}
+{% endmacro %}
+
+<table class="table table-striped table-responsive messages-table" id="folder-{{ context }}">
+	<thead>
+		<tr>
+			<th>From</th>
+			<th class="message-attachments"><span class="fa fa-paperclip"></span></th>
+			{% if showExcerpt %}
+				<th>Preview</th>
+			{% else %}
+				<th>Subject</th>
+			{% endif %}
+			<th class="message-date">
+				{% if context == 'sent' %}
+					Sent
+				{% elseif context == 'drafts' %}
+					Updated
+				{% else %}
+					Received
+				{% endif %}
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for message in messages %}
+			<tr class="{{ ownMacro.generateMessageClass(message, __SELF__.message) | preg_replace('/\\s+/', ' ') | trim }}"
+				{{ ownMacro.generateMessageLink(message, __SELF__, popup) }}
+			>
+				<td class="message-sender">
+					{% if context == 'inbox' or context == 'widget' %}
+						{{ message.authorName({ 'threadCount': true, 'tags': false }) }}
+					{% else %}
+						{{ message.authorName({ 'threadCount': false, 'tags': false }) }}
+					{% endif %}
+				</td>
+
+				<td class="message-attachments">
+					{% set attachmentsCount = message.attachments | length %}
+					{% if attachmentsCount %}
+						{{ attachmentsCount }}
+					{% endif %}
+				</td>
+
+				<td class="message-description">
+					{% if showExcerpt %}
+						<span class="message-excerpt">{{ message.body | trimByWords(15) }}</span>
+					{% else %}
+						<span class="message-subject">{{ message.subject }}</span>
+					{% endif %}
+				</td>
+
+				<td class="message-date">{{ __SELF__.formatDate(message) }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

@@ -1,0 +1,30 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+staff_recipients:
+    label: look.conversation::lang.models.participant.type.staff
+    emptyMessage: look.conversation::lang.controllers.general.messages.no_staff_selected
+    view:
+        list: $/look/conversation/models/staff/columns.yaml
+        toolbarPartial: $/look/conversation/controllers/partials/toolbar.relations.recipients.staff.htm
+        showSearch: false
+        showSorting: false
+        showCheckboxes: true
+        recordsPerPage: 5
+    manage:
+        title: look.conversation::lang.controllers.general.messages.add_staff
+        showSearch: true
+        list: $/look/conversation/models/staff/columns.yaml
+        scope: notCurrentUser
+
+client_recipient:
+    label: look.conversation::lang.models.participant.type.client
+    emptyMessage: look.conversation::lang.controllers.general.messages.no_client_selected
+    view:
+        form: $/look/conversation/models/participant/fields.yaml
+        toolbarPartial: $/look/conversation/controllers/partials/toolbar.relations.recipients.client.htm
+    manage:
+        title: look.conversation::lang.controllers.general.messages.add_client
+        form: $/look/conversation/models/participant/fields.yaml
+        list: $/look/conversation/models/client/columns.yaml

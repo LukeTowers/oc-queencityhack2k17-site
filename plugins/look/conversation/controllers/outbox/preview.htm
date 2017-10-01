@@ -1,0 +1,44 @@
+<?php Block::put('breadcrumb') ?>
+
+    <ul>
+        <li>
+            <a href="<?= Backend::url('look/conversation/outbox') ?>">
+                <?= e(trans('look.conversation::lang.navigation.outbox')) ?>
+            </a>
+        </li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+
+<?php Block::endPut() ?>
+
+<?php if ( ! $this->fatalError): ?>
+
+    <div class="form-preview">
+        <?= $this->formRenderPreview() ?>
+    </div>
+
+    <div class="form-buttons">
+        <a href="<?= Backend::url('look/conversation/outbox') ?>"
+           class="btn btn-default">
+            <?= e(trans('backend::lang.form.close')) ?>
+        </a>
+        
+        <button type="submit"
+		        data-request="onUnsend"
+		        data-stripe-load-indicator
+		        class="btn btn-danger">
+		    <?= e(trans('look.conversation::lang.controllers.general.buttons.unsend')) ?>
+		</button>
+    </div>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p>
+        <a href="<?= Backend::url('look/conversation/outbox') ?>"
+           class="btn btn-default">
+            <?= e(trans('look.conversation::lang.message.return')) ?>
+        </a>
+    </p>
+
+<?php endif; ?>

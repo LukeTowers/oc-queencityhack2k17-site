@@ -1,0 +1,32 @@
+<?= $this->makePartial(plugins_path('look/conversation/controllers/inbox/_breadcrumbs.htm')) ?>
+
+<?php if ( ! $this->fatalError): ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+    <div class="layout-row">
+        <?= $this->formRender() ?>
+    </div>
+
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <?= $this->makePartial(plugins_path('look/conversation/controllers/partials/btn.send.htm')) ?>
+        
+            <?= $this->makePartial(plugins_path('look/conversation/controllers/partials/btn.save.htm')) ?>
+
+            <span class="btn-text">
+                <?= e(trans('backend::lang.form.or')) ?>
+                <a href="<?= Backend::url('look/conversation/inbox') ?>">
+                    <?= e(trans('backend::lang.form.cancel')) ?>
+                </a>
+            </span>
+        </div>
+    </div>
+
+    <?= Form::close() ?>
+
+<?php else: ?>
+
+    <?= $this->makePartial(plugins_path('look/conversation/controllers/inbox/_error.htm')) ?>
+
+<?php endif; ?>

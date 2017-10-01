@@ -1,0 +1,55 @@
+{% set message = __SELF__.message %}
+
+{% set fields = [
+	{
+		'name'   : 'messageId',
+		'type'   : 'hidden',
+		'value'  : message.id,
+	}
+] %}
+
+{% if __SELF__.fromCurrentUser(message) %}
+	
+	{% set fields = fields | merge([
+		{
+			'label'   : 'To',
+			'value'   : message.recipientNames,
+			'preview' : true,
+		}
+	]) %}
+	
+{% else %}
+	
+	{% set fields = fields | merge([
+		{
+			'label'   : 'From',
+			'value'   : message.user.fullName,
+			'preview' : true,
+		}
+	]) %}
+	
+{% endif %}
+
+{% set fields = fields | merge([
+	{
+		'type'    : 'richeditor',
+		'label'   : 'Message',
+		'value'   : message.body,
+		'preview' : true,
+	}	
+]) %}
+
+{% if message.hasAttachments() %}
+
+	{% set fields = fields | merge([
+		{
+			'type'    : 'fileupload',
+			'label'   : 'Attachments',
+			'name'    : 'viewAttachments',
+			'preview' : true,
+		}
+	]) %}
+	
+{% endif %}
+	
+{% partial '@fields.render.htm' fields=fields %}

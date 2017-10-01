@@ -1,0 +1,8 @@
+noRecordsMessage: 'look.conversation::lang.controllers.general.messages.no_assigned_users'
+
+columns:
+    name:
+        label: 'look.casefiles::lang.models.user.name'
+
+    surname:
+        label: 'look.casefiles::lang.models.user.surname'

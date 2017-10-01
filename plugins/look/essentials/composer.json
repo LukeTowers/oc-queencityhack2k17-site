@@ -1,0 +1,21 @@
+{
+  "name": "look/essentials",
+  "type": "october-plugin",
+  "description": "Helper plugin for OctoberCMS",
+  "homepage": "https://www.lookagency.com",
+  "authors": [
+    {
+      "name": "Look Agency",
+      "email": "it@lookagency.com"
+    }
+  ],
+  "repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/LukeTowers/Purifier"
+    }
+  ],
+  "require": {
+    "luketowers/purifier": "~3.0"
+  }
+}

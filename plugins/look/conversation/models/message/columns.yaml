@@ -1,0 +1,44 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+
+    attachments:
+        label: '<span class="oc-icon-paperclip"></span>'
+        type: partial
+        path: $/look/conversation/models/message/column.attachments.htm
+        searchable: false
+        sortable: false
+        width: 10px
+        
+    subject_with_thread_count:
+        label: look.conversation::lang.models.message.subject
+        searchable: false
+        sortable: false
+        
+    body:
+        label: look.conversation::lang.models.message.excerpt
+        type: partial
+        path: $/look/conversation/models/message/column.excerpt.htm
+        searchable: false
+        sortable: false
+
+    from:
+        label: look.conversation::lang.models.message.from
+        type: partial
+        path: $/look/conversation/models/message/column.user_name.htm
+        relation: user
+        # TODO: Make sure sorting by name works correctly
+        searchable: false
+        sortable: false
+        
+    recipientNames:
+        label: look.conversation::lang.models.message.to
+        invisible: true
+        sortable: false
+        searchable: false
+
+    sent_at:
+        label: look.conversation::lang.models.message.sent_at.received
+        type: datetime

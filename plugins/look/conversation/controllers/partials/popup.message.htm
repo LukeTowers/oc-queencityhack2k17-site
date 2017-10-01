@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="popup">&times;</button>
+    <h4 class="modal-title">
+        <?= e(trans('look.conversation::lang.models.message.label')) ?>
+    </h4>
+</div>
+<div class="modal-body">
+	<div class="form-preview">
+		<?= $this->formRenderPreview() ?>
+	</div>
+</div>
+<div class="modal-footer">
+	<?= $this->makePartial(plugins_path('look/conversation/controllers/partials/btn.forward.htm'), ['id' => $formModel->id]) ?>
+	<button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="popup">
+        <?= e(trans('backend::lang.relation.close')) ?>
+    </button>
+</div>

@@ -1,0 +1,25 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    unread:
+        label: look.conversation::lang.controllers.general.filters.unread
+        type: checkbox
+        scope: unread
+        
+    read:
+        label: look.conversation::lang.controllers.general.filters.read
+        type: checkbox
+        scope: read
+
+    hasAttachments:
+        label: look.conversation::lang.controllers.general.filters.has_attachments
+        type: checkbox
+        scope: hasAttachments
+        
+    noAttachments:
+        label: look.conversation::lang.controllers.general.filters.no_attachments
+        type: checkbox
+        scope: noAttachments

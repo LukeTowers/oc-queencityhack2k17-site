@@ -1,0 +1,20 @@
+.message-row {
+	cursor: pointer;
+}
+
+.message-row.unread {
+	font-weight: bold;
+}
+
+.message-attachments {
+	text-align: center;
+}
+
+.message-date {
+    text-align: right;
+}
+
+
+body .field-richeditor .fr-box.fr-fullscreen {
+	z-index: 2147483646 !important; /* One below max to allow for flash messages */
+}

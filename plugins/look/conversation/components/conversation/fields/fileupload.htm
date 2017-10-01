@@ -1,0 +1,16 @@
+{% set config = {
+	'name': name,
+	'preview': preview,
+} %}
+
+{% set uploader = attribute(__SELF__.fileUploaders, config.name) %}
+
+{% if uploader.isMulti %}
+
+    {% partial '@fields/fileupload-multi' uploader=uploader config=config %}
+
+{% else %}
+
+    {% partial '@fields/fileupload-single' uploader=uploader config=config %}
+
+{% endif %}

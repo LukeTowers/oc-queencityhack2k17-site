@@ -1,0 +1,16 @@
+<div data-control="toolbar">
+    <?= $this->makePartial(plugins_path('look/conversation/controllers/partials/btn.new.htm')) ?>
+    
+    <button class="btn btn-danger oc-icon-trash"
+        disabled="disabled"
+        onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
+        data-request="onArchive"
+        data-request-confirm="<?= e(trans('look.conversation::lang.controllers.general.messages.delete_selected_confirm')) ?>"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$el.prop('disabled', false)"
+        data-stripe-load-indicator>
+    <?= e(trans('look.conversation::lang.controllers.general.buttons.delete_selected')) ?>
+</button>
+</div>

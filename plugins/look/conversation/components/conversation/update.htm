@@ -1,0 +1,70 @@
+{% set message = __SELF__.message %}
+
+{% if message is not empty %}
+
+	{% set siblings = message.siblings().removeOrder('sent_at').oldest().get() %}
+	{% if siblings is not empty %}
+	
+		{% partial '@fields.render.htm' fields = [{
+				'label'   : 'Subject',
+				'value'   : message.subject,
+				'preview' : true,
+			}]
+		%}
+		
+		{% partial '@messages' messages=siblings popup=true showExcerpt=true %}
+		
+		<div id="message-container">
+		
+			{# Don't display a message in here by default, clicking on the message row will still support previewing the message, but there's no need to display it from the getgo #}
+		
+		</div>
+		
+		<hr>
+		
+		{{ form_open() }}
+		
+	{% else %}
+	
+		{{ form_open() }}
+		
+			{% partial '@fields.render.htm' fields = [{
+					'label'   : 'Subject',
+					'name'    : 'subject',
+					'value'   : message.subject,
+				}]
+			%}
+		
+	{% endif %}
+	
+		{# Messages will not have a recipient defined until they are sent #}
+		{% set fields = [
+			{
+				'label'   : 'To',
+				'value'   : __SELF__.getClientRecipient().full_name,
+				'preview' : true,
+			},
+			{
+				'type'    : 'richeditor',
+				'label'   : 'Message',
+				'name'    : 'body',
+				'value'   : message.body,
+			},
+			{
+				'type'    : 'fileupload',
+				'label'   : 'Attachments',
+				'name'    : 'updateAttachments',
+			}
+		] %}
+		
+		{% partial '@fields.render.htm' fields=fields %}
+		
+		{% partial '@buttons/send' %}
+		
+		{% partial '@buttons/save' %}
+		
+		{% partial '@buttons/delete' %}
+		
+	{{ form_close() }}
+	
+{% endif %}

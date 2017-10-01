@@ -1,0 +1,21 @@
+columns:
+    name:
+        label: look.conversation::lang.models.template.name
+        type: text
+        searchable: true
+        sortable: true
+    subject:
+        label: look.conversation::lang.models.message.subject
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: look.conversation::lang.models.general.created_at
+        type: datetime
+        invisible: true
+        sortable: true
+    updated_at:
+        label: look.conversation::lang.models.general.updated_at
+        type: datetime
+        invisible: true
+        sortable: true

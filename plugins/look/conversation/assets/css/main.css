@@ -1,0 +1,28 @@
+#layout-mainmenu .counter {
+    color: #fff;
+    background-color: #d9350f;
+    padding: 3px 6px;
+    font-size: 11px;
+    line-height: 100%;
+    border-radius: 3px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.att-column {
+	text-align: center;
+}
+
+.list-cell-name-attachments [class^="oc-icon-"]:before,
+.list-cell-name-attachments [class*="oc-icon-"]:before,
+.att-column [class^="oc-icon-"]:before, 
+.att-column [class*=" oc-icon-"]:before {
+	margin: 0 !important;
+}
+
+
+/* Remove the Emojione credits message from Froala */
+.fr-command.fr-emoticon + p {
+    display: none;
+}

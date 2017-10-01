@@ -1,0 +1,13 @@
+<div class="panel">
+	<h3 class="panel-title"><a href="{{ __SELF__.makeUrl({context: 'inbox'}) }}">Messages</a></h3>
+	{# Not .panel-body to avoid the additional padding #}
+	<div class="panel-contents">
+		<p><strong>{{ __SELF__.getScopeCount('unread') }} unread messages</strong></p>
+		
+		{% if __SELF__.messages %}
+			{% partial '@messages' messages=__SELF__.messages %}
+		{% endif %}
+		
+		<a href="{{ __SELF__.makeUrl({context: 'create'}) }}" class="btn btn-default">Compose new message</a>
+	</div>
+</div>

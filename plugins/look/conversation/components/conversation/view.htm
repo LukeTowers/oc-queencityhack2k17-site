@@ -1,0 +1,35 @@
+{% set message = __SELF__.message %}
+
+{% if message is not empty %}
+
+	{% partial '@fields.render.htm' fields = [{
+			'label'   : 'Subject',
+			'value'   : message.subject,
+			'preview' : true,
+		}]
+	%}
+
+	{% set siblings = message.siblings(null, null, false).removeOrder('sent_at').oldest().get() %}
+	{% if siblings is not empty and not __SELF__.popup %}
+		{% partial '@messages' messages=siblings popup=true showExcerpt=true %}
+	{% endif %}
+	
+	<div id="message-container">
+	
+		{% partial '@view-message' %}
+	
+	</div>
+	
+	{{ form_open() }}
+		
+		{% if not __SELF__.fromCurrentUser(message) %}
+			
+			{% partial '@buttons/reply' %}
+			
+		{% endif %}
+		
+		{% partial '@buttons/delete' %}
+		
+	{{ form_close() }}
+		
+{% endif %}

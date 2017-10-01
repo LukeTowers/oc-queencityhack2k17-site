@@ -1,0 +1,29 @@
+<?= $this->makePartial(plugins_path('look/conversation/controllers/inbox/_breadcrumbs.htm')) ?>
+
+<?php if ( ! $this->fatalError): ?>
+
+    <div class="form-preview">
+        <?= $this->formRenderPreview() ?>
+    </div>
+
+    <div class="form-buttons">
+        <a href="<?= Backend::url('look/conversation/inbox/reply/' . $formModel->id) ?>"
+           class="btn btn-primary oc-icon-reply">
+            <?= e(trans('look.conversation::lang.controllers.general.buttons.reply')) ?>
+        </a>
+        
+        <?= $this->makePartial(plugins_path('look/conversation/controllers/partials/btn.forward.htm'), ['id' => $formModel->id]) ?>
+        
+        <?= $this->makePartial(plugins_path('look/conversation/controllers/partials/btn.archive.htm')) ?>
+
+        <a href="<?= Backend::url('look/conversation/inbox') ?>"
+           class="btn btn-default">
+            <?= e(trans('backend::lang.form.close')) ?>
+        </a>
+    </div>
+
+<?php else: ?>
+
+    <?= $this->makePartial(plugins_path('look/conversation/controllers/inbox/_error.htm')) ?>
+
+<?php endif; ?>

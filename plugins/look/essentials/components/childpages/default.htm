@@ -1,0 +1,21 @@
+{# Outputs the child pages #}
+
+{% import _self as childPageView %}
+
+{% if childPages.pages %}
+	<div class="listing_items_container listing-pages">
+		{{ childPageView.displayPages(childPages.pages) | preg_replace('/\\s+/', ' ') | trim | raw }}
+		<div class="clearfix"></div>
+	</div>
+{% endif %}
+
+{% macro displayPages(pages) %}
+	{% for page in pages %}
+		<a href="{{ page.url | app }}" class="item-block">
+			<img class="item-thumb" alt="{{ page.title }}" style="background-image: url('{{ page.featuredImage.image | media }}');" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQAAAAA3bvkkAAAAAnRSTlMAAQGU/a4AAAAKSURBVHgBY2gAAACCAIFMF9ffAAAAAElFTkSuQmCC" />
+			<h2 class="item-title">{{ page.title }}</h2>
+			<p class="item-excerpt">{{ page.excerpt | raw }}</p>
+			<span class="item-cta">Learn more</span>
+		</a>
+	{% endfor %}
+{% endmacro %}

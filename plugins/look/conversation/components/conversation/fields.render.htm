@@ -1,0 +1,14 @@
+{% for field in fields %}
+	{% set type = field.type | default('text') %}
+	
+	<div class="form-group">
+		{% if field.label is not empty %}
+			<label>{{ field.label }}</label>
+		{% endif %}
+		{% partial ('@fields/' ~ type ~ '.htm') 
+			name=field.name
+			value=field.value
+			preview=field.preview 
+		%}
+	</div>
+{% endfor %}

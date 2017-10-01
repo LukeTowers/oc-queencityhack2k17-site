@@ -1,0 +1,47 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: $/look/conversation/models/message/columns_archive.yaml
+
+# Model Class name
+modelClass: Look\Conversation\Models\Message
+
+# List Title
+title: look.conversation::lang.navigation.archive
+
+# Link URL for each record
+recordUrl: look/conversation/archive/preview/:id
+
+# Message to display if the list is empty
+noRecordsMessage: look.conversation::lang.controllers.general.messages.no_archived
+
+# Records to display per page
+recordsPerPage: 20
+
+# Displays the list column set up button
+showSetup: true
+
+# Displays the sorting link on each column
+showSorting: true
+
+# Default sorting column
+defaultSort:
+    column: created_at
+    direction: desc
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt
+
+# Filter config
+filter: $/look/conversation/controllers/configs/filters.no_status.yaml

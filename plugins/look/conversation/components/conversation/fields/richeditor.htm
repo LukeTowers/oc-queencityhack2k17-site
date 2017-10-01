@@ -1,0 +1,15 @@
+{% if preview %}
+	<div class="form-control" readonly>
+		{{ value | raw }}
+	</div>
+{% else %}
+	<div
+	    id=""
+	    class="field-richeditor size-huge"
+	    data-toolbar-buttons="fullscreen,paragraphFormat,bold,italic,underline,strikeThrough,|,|,color,emoticons,|,|,|,align,formatOL,formatUL,quote,insertHR,insertTable,undo,redo,clearFormatting"
+	    data-ace-vendor-path="/modules/backend/formwidgets/codeeditor/assets/vendor/ace"
+	    data-control="richeditor">
+	    <textarea name="{{ name }}" id="">{{ value }}</textarea>
+	    <div class="height-indicator"></div>
+	</div>
+{% endif %}

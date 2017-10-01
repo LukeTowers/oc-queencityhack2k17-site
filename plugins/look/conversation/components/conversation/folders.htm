@@ -1,0 +1,51 @@
+{% set context = __SELF__.context %}
+{% import _self as ownMacro %}
+
+{% macro generateBadge(count) %}
+	{% if (count) %}
+		<span class="badge">{{ count }}
+	{% endif %}
+{% endmacro %}
+
+{% macro generateNavClass(item, active) %}
+	list-group-item
+	{% if item == active %}
+		active
+	{% endif %}
+{% endmacro %}
+
+<div id="messages-container" class="mailbox">
+	<div class="row">
+		<div class="col-md-3 messages-sidebar">
+			<a href="{{ __SELF__.makeUrl({context: 'create'}) }}" class="btn btn-primary btn-block">Compose new message</a>
+			<br>
+			<div class="panel panel-default">
+			    <div class="panel-heading">
+			        Folders
+			    </div>
+			    <ul class="list-group filter-list-group">
+			        <li class="{{ ownMacro.generateNavClass('inbox', context) }}"><a href="{{ __SELF__.makeUrl({context: 'inbox'}) }}">Inbox {{ ownMacro.generateBadge(__SELF__.getScopeCount('unread')) }}</a></li>
+			        <li class="{{ ownMacro.generateNavClass('drafts', context) }}"><a href="{{ __SELF__.makeUrl({context: 'drafts'}) }}">Drafts {{ ownMacro.generateBadge(__SELF__.getScopeCount('draft')) }}</a></li>
+			        <li class="{{ ownMacro.generateNavClass('sent', context) }}"><a href="{{ __SELF__.makeUrl({context: 'sent'}) }}">Sent</a></li>
+			    </ul>
+			</div>
+		</div>
+		<div class="col-md-9 messages-content">
+			{% if __SELF__.messages is empty %}
+					<p>
+						{% if context == 'inbox' %}
+							{{ "look.conversation::lang.controllers.general.messages.no_messages" | trans }}
+						{% elseif context == 'drafts' %}
+							{{ "look.conversation::lang.controllers.general.messages.no_drafts" | trans }}
+						{% elseif context == 'sent' %}
+							{{ "look.conversation::lang.controllers.general.messages.no_sent" | trans }}
+						{% else %}
+							There are no messages here.
+						{% endif %}
+					</p>
+			{% else %}
+				{% partial '@messages' messages=__SELF__.messages %}
+			{% endif %}
+		</div>
+	</div>
+</div>

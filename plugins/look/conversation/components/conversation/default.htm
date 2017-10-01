@@ -1,0 +1,31 @@
+{% set context = __SELF__.context %}
+
+{% if context == 'widget' %}
+	
+	{% partial '@widget' %}
+	
+{% else %} {# Folder Views #}
+	
+	{% if context == 'create' %}
+		
+		{% partial '@create' %}
+		
+	{% elseif context == 'update' %}
+		
+		{% partial '@update' %}
+		
+	{% elseif context == 'reply' %}
+		
+		{% partial '@reply' %}
+		
+	{% elseif context == 'view' %}
+	
+		{% partial '@view' %}
+		
+	{% else %}
+		
+		{% partial '@folders' %}
+		
+	{% endif %}
+
+{% endif %}

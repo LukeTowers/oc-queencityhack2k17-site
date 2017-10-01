@@ -1,0 +1,12 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: backend::lang.user.first_name
+        searchable: true
+
+    surname:
+        label: backend::lang.user.last_name
+        searchable: true

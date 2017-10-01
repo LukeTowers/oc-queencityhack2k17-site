@@ -1,0 +1,41 @@
+<?php Block::put('breadcrumb') ?>
+
+    <ul>
+        <li>
+            <a href="<?= Backend::url('look/conversation/archive') ?>">
+                <?= e(trans('look.conversation::lang.navigation.archive')) ?>
+            </a>
+        </li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+
+<?php Block::endPut() ?>
+
+<?php if ( ! $this->fatalError): ?>
+
+    <div class="form-preview">
+        <?= $this->formRenderPreview() ?>
+    </div>
+
+    <div class="form-buttons">
+    	<div class="loading-indicator-container">
+            <?= $this->makePartial(plugins_path('look/conversation/controllers/partials/btn.restore.htm')) ?>
+
+            <a href="<?= Backend::url('look/conversation/archive') ?>"
+	           class="btn btn-default">
+	            <?= e(trans('backend::lang.form.close')) ?>
+	        </a>
+        </div>
+    </div>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p>
+        <a href="<?= Backend::url('look/conversation/archive') ?>"
+           class="btn btn-default">
+            <?= e(trans('look.conversation::lang.controllers.general.buttons.return')) ?>
+        </a>
+    </p>
+
+<?php endif; ?>

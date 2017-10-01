@@ -1,0 +1,18 @@
+1.0.1:
+    - 'First version of Conversation plugin.'
+    - create_messages_table.php
+    - create_participants_table.php
+    - create_statuses_table.php
+    - create_threads_table.php
+1.0.2:
+    - 'Add soft deletes to messages table'
+    - add_soft_deletes_messages.php
+1.0.3:
+    - 'Add sent_at column to messages table'
+    - add_sent_at_messages_table.php
+1.0.4:
+    - 'Add forwarded_from ID to threads table'
+    - add_forwarded_from_threads.php
+1.0.5:
+    - 'Add message templates'
+    - create_templates_table.php

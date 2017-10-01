@@ -1,0 +1,18 @@
+<p></p>
+{% import _self as ownMacro %}
+{{ ownMacro.generateMessagesPreview(messages) }}
+
+{% macro generateMessagesPreview(messages) %}
+	{% if messages | length %}
+		{% set message = messages.shift() %}
+		<hr>
+		<blockquote>
+			<span><strong>Subject:</strong> {{ message.subject }}</span><br>
+			<span><strong>On {{ message.sent_at | date }} {{ message.authorName({ 'proper': true }) }} wrote:</strong></span><br>
+			<div style="margin: 1em 0 0 1em;">
+				{{ message.body }}
+				{{ ownMacro.generateMessagesPreview(messages) }}
+			</div>
+		</blockquote>
+	{% endif %}
+{% endmacro %}

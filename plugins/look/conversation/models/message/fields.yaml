@@ -1,0 +1,64 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    _add_staff_recipients:
+        label: look.conversation::lang.controllers.general.buttons.add_staff_recipients
+        type: checkbox
+        span: left
+        context: [create, update, forward]
+
+    client_recipient:
+        type: partial
+        path: $/look/conversation/models/message/field.relation.client_recipient.htm
+        context: [create, update, forward]
+        span: left
+        
+    staff_recipients:
+        type: partial
+        path: $/look/conversation/models/message/field.relation.staff_recipients.htm
+        context: [create, update, forward]
+        span: right
+        trigger:
+            action: show
+            field: _add_staff_recipients
+            condition: checked
+            
+    authorName:
+        label: look.conversation::lang.models.message.from
+        context: preview
+        span: left
+        
+    recipientNames:
+        label: look.conversation::lang.models.message.to
+        disabled: true
+        hidden: true
+        span: right
+        
+    _template:
+        label: look.conversation::lang.models.template.label
+        comment: look.conversation::lang.controllers.general.messages.template_instructions
+        context: [create, update, reply]
+        type: dropdown
+
+    subject:
+        label: look.conversation::lang.models.message.subject
+        span: full
+        required: true
+        dependsOn: _template
+
+    body:
+        label: look.conversation::lang.models.message.body
+        type: richeditor
+        size: huge
+        toolbarButtons: fullscreen|paragraphFormat|bold|italic|underline|strikeThrough|||color|emoticons||||align|formatOL|formatUL|quote|insertHR|insertLink|insertImage|insertTable|undo|redo|clearFormatting
+        required: true
+        dependsOn: _template
+
+    attachments:
+        label: look.conversation::lang.models.message.attachments
+        fileTypes: pdf,txt,text,csv,tsv,jpg,jpeg,bmp,png,gif,doc,docx,xls,xlsx,ppt,pptx
+        type: fileupload
+        mode: file

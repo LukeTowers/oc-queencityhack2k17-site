@@ -1,0 +1,55 @@
+{% set message = __SELF__.message %}
+
+{% if message is not empty %}
+
+	{% partial '@fields.render.htm' fields = [{
+			'label'   : 'Subject',
+			'value'   : message.subject,
+			'preview' : true,
+		}]
+	%}
+
+	{% set siblings = message.siblings(null, null, false).removeOrder('sent_at').oldest().get() %}
+	{% if siblings is not empty %}
+		{% partial '@messages' messages=siblings popup=true showExcerpt=true %}
+	{% endif %}
+	
+	<div id="message-container">
+	
+		{% partial '@view-message' %}
+	
+	</div>
+
+	<hr>
+
+	{{ form_open() }}
+
+		{% set fields = [
+			{
+				'label'   : 'To',
+				'value'   : __SELF__.getClientRecipient().full_name,
+				'preview' : true,
+			},
+			{
+				'type'    : 'richeditor',
+				'label'   : 'Reply',
+				'name'    : 'body',
+			},
+			{
+				'type'    : 'fileupload',
+				'label'   : 'Attachments',
+				'name'    : 'replyAttachments',
+			}
+		] %}
+		
+		{% partial '@fields.render.htm' fields=fields %}
+		
+		{% partial '@buttons/send' %}
+		
+		{% partial '@buttons/save' %}
+		
+		{% partial '@buttons/delete' %} {# TODO: Replace with cancel link, or add support for deleting autosaves. I'm leaning towards just cancel #}
+		
+	{{ form_close() }}
+	
+{% endif %}
