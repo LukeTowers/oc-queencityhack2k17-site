@@ -1,6 +1,6 @@
 ==
 <?php
-    function onStart() {
+function onStart() {
         $this['loggedIn'] = Auth::check();
     }
 ?>
@@ -34,6 +34,9 @@
                     {% if loggedIn %}
                         <li class="{% if( this.page.id == 'foster') %}active {% endif %}">
                             <a href="{{ 'foster'|page }}">Foster</a>
+                        </li>
+                        <li class="{% if( this.page.id == 'messages-messages') %}active {% endif %}">
+                            <a href="{{ 'messages/index'|page({'context': '', 'resourceId': ''}) }}">Messages</a>
                         </li>
                         <li class="{% if( this.page.id == 'app.account-auth-logout') %}active {% endif %}">
                             <a href="{{ 'app.account/auth-logout'|page }}">Logout</a>

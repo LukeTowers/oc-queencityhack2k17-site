@@ -1,0 +1,29 @@
+title = "Messages"
+url = "/foster/messages/:context?/:resourceId?"
+layout = "default"
+
+[conversation]
+context = "{{ :context }}"
+resourceId = "{{ :resourceId }}"
+defaultPage = "messages/index"
+==
+
+<!-- Page Content -->
+<div class="container">
+    <div class="well">
+
+        <style type="text/css">
+            ul.list-group.filter-list-group {
+                list-style-type: none;
+            }
+
+            .list-group a {
+                display: block;
+                padding: 0.5em 1em;
+            }
+        </style>
+
+        {% component 'conversation' %}
+
+    </div>
+</div>

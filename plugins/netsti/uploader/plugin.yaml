@@ -1,0 +1,6 @@
+plugin:
+    name: 'netsti.uploader::lang.plugin.name'
+    description: 'netsti.uploader::lang.plugin.description'
+    author: NetSTI
+    icon: oc-icon-upload
+    homepage: ''

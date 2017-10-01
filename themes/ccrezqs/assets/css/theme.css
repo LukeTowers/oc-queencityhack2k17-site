@@ -298,7 +298,6 @@ button.close {
   margin-top: -0.65em;
 }
 html.cssanimations .loading-indicator > span {
-  background-image: url('../themes/iacea-theme/assets/vendor/october/images/loader-transparent.svg');
   background-size: 35px 35px;
   background-position: 50% 50%;
   -o-animation: spin 1s linear infinite;
@@ -307,7 +306,6 @@ html.cssanimations .loading-indicator > span {
 }
 html.cssanimations .loading-indicator.is-opaque > span,
 html.cssanimations .loading-indicator-container.is-opaque .loading-indicator > span {
-  background-image: url('../themes/iacea-theme/assets/vendor/october/images/loader.svg');
 }
 .loading-indicator-container.size-small {
   min-height: 20px;

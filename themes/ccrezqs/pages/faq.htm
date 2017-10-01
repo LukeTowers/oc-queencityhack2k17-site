@@ -1,7 +1,11 @@
-title = "faq"
+title = "FAQs"
 url = "/faq"
 layout = "default"
-is_hidden = "0"
+is_hidden = 0
+
+[contactForm]
+injectBootstrapAssets = 1
+injectMainScript = 1
 ==
 <!-- Page Content -->
 <div class="container">
@@ -152,5 +156,10 @@ is_hidden = "0"
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-
         <hr>
+        
+        <div class="well">
+            <h2>Still have questions? Contact us!</h2>
+        <style type="text/css">.flexiContactForm { padding-bottom: 4em; } </style>
+        {% component 'contactForm' %}
+        </div>
