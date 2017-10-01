@@ -1,3 +1,4 @@
+==
 <a class="col-md-4 text-center dog-panel" href="{{ 'dogslisting' | page({id: dog.id}) }}">
     <div class="thumbnail">
         <img class="img-responsive" src="{{ dog.photos.first().getThumb('330','250', {'mode': 'crop'})}}" alt="">
@@ -5,7 +6,7 @@
             <h3 style="text-transform: capitalize;">{{ dog.name }}<br>
                 <small>{{ dog.size }}, {{ dog.gender }}, {{ dog.general_info.breed }}</small>
             </h3>
-            <p>{{ dog.general_info.situation }}</p>
+            <p style="font-size: 1.2rem;">{{ dog.general_info.situation }}</p>
         </div>
     </div>
 </a>
